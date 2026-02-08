@@ -1,0 +1,98 @@
+[
+  {
+    "ContainingType": "Anipat.Controllers.FeedbackController",
+    "Method": "GetAll",
+    "RelativePath": "api/Feedback",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Anipat.Controllers.FeedbackController",
+    "Method": "Create",
+    "RelativePath": "api/Feedback",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "feedback",
+        "Type": "Anipat.Models.Feedback",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Program\u002B\u003C\u003Ec",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_1",
+    "RelativePath": "api/feedbacks",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Anipat.Models.Feedback, Anipat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Anipat.Controllers.ServiceController",
+    "Method": "GetAll",
+    "RelativePath": "api/Service",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Anipat.Controllers.ServiceController",
+    "Method": "Create",
+    "RelativePath": "api/Service",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "service",
+        "Type": "Anipat.Models.Service",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Anipat.Controllers.TeamController",
+    "Method": "GetAll",
+    "RelativePath": "api/Team",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Anipat.Controllers.TeamController",
+    "Method": "Create",
+    "RelativePath": "api/Team",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "team",
+        "Type": "Anipat.Models.Team",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
