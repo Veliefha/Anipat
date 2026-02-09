@@ -1,3 +1,4 @@
+wwwroot\admin\index.html
 wwwroot\css\animate.css
 wwwroot\css\bootstrap.min.css
 wwwroot\css\flaticon.css
@@ -159,6 +160,7 @@ wwwroot\js\jquery.scrollUp.min.js
 wwwroot\js\jquery.slicknav.min.js
 wwwroot\js\jquery.validate.min.js
 wwwroot\js\mail-script.js
+wwwroot\js\main.js
 wwwroot\js\nice-select.min.js
 wwwroot\js\owl.carousel.min.js
 wwwroot\js\plugins.js
@@ -197,4 +199,3 @@ wwwroot\scss\_team.scss
 wwwroot\scss\_testmonial.scss
 wwwroot\scss\_varriable.scss
 wwwroot\index.html
-wwwroot\js\main.js

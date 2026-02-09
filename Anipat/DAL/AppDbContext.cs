@@ -1,4 +1,5 @@
-﻿using Anipat.Models;
+﻿using anipat.Models;
+using Anipat.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Anipat.DAL
@@ -12,6 +13,7 @@ namespace Anipat.DAL
         public DbSet<Team> Teams { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Feedback> Feedbacks { get; set; }
+        public DbSet<Pet> Pets { get; set; }
 
 
     }
