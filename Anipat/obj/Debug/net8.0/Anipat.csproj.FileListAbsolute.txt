@@ -279,3 +279,4 @@ C:\Users\fexriyye\Desktop\Anipat\Anipat\obj\Debug\net8.0\refint\Anipat.dll
 C:\Users\fexriyye\Desktop\Anipat\Anipat\obj\Debug\net8.0\Anipat.pdb
 C:\Users\fexriyye\Desktop\Anipat\Anipat\obj\Debug\net8.0\Anipat.genruntimeconfig.cache
 C:\Users\fexriyye\Desktop\Anipat\Anipat\obj\Debug\net8.0\ref\Anipat.dll
+C:\Users\fexriyye\Desktop\Anipat\Anipat\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anipat - Qeydiyyat</title>
+    <style>
+        :root {
+            --primary-red: #d32f2f; /* Anipat Qırmızısı */
+            --bg-pink: #fff5f5;
+            --dark-grey: #333;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-pink);
+            /* Arxa fonda şirin pati naxışları */
+            background-image: url("https://www.transparenttextures.com/patterns/paws.png");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .auth-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(211, 47, 47, 0.15);
+            width: 380px;
+            text-align: center;
+            border-top: 8px solid var(--primary-red);
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+            color: var(--primary-red);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            color: var(--dark-grey);
+            margin-bottom: 25px;
+            font-size: 22px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            box-sizing: border-box;
+            outline: none;
+            transition: 0.3s;
+            font-size: 15px;
+        }
+
+            input:focus {
+                border-color: var(--primary-red);
+                box-shadow: 0 0 5px rgba(211, 47, 47, 0.2);
+            }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-red);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+            .btn-submit:hover {
+                background-color: #b71c1c;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(183, 28, 28, 0.3);
+            }
+
+        .link-text {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #666;
+        }
+
+            .link-text a {
+                color: var(--primary-red);
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+                .link-text a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+
+    <div class="auth-card">
+        <div class="logo">🐾 ANIPAT</div>
+        <h2>Yeni Hesab Yarat</h2>
+
+        <div class="input-group">
+            <input type="text" id="fullname" placeholder="Ad Soyad">
+        </div>
+        <div class="input-group">
+            <input type="email" id="email" placeholder="Email ünvanı">
+        </div>
+        <div class="input-group">
+            <input type="text" id="username" placeholder="İstifadəçi adı">
+        </div>
+        <div class="input-group">
+            <input type="password" id="password" placeholder="Şifrə">
+        </div>
+
+        <button class="btn-submit" onclick="handleRegister()">Qeydiyyatı Tamamla</button>
+
+        <div class="link-text">
+            Artıq hesabınız var? <a href="login.html">Daxil olun</a>
+        </div>
+    </div>
+
+    <script>
+        <script>
+            async function handleRegister() {
+            // 1. Sahələri və dəyərləri götürürük
+            const fullNameInput = document.getElementById('fullname');
+            const emailInput = document.getElementById('email');
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+
+            const fullName = fullNameInput.value.trim();
+            const email = emailInput.value.trim();
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value;
+
+            // 2. Email formatının yoxlanması (Regex)
+            // Standart: ad@misal.com formatında olmalıdır
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+                alert("Səhv email formatı!\nNümunə: ad@gmail.com");
+            emailInput.style.border = "2px solid red";
+            emailInput.focus();
+            return;
+            } else {
+                emailInput.style.border = "1px solid #ddd";
+            }
+
+            // 3. Şifrə təhlükəsizliyi yoxlaması
+            let passErrors = [];
+            if (password.length < 6) passErrors.push("- Ən azı 6 simvol");
+            if (!/[A-Z]/.test(password)) passErrors.push("- Ən azı bir böyük hərf");
+            if (!/[a-z]/.test(password)) passErrors.push("- Ən azı bir kiçik hərf");
+            if (!/[0-9]/.test(password)) passErrors.push("- Ən azı bir rəqəm");
+
+            if (passErrors.length > 0) {
+                alert("Şifrə çox sadədir:\n" + passErrors.join("\n"));
+            passwordInput.style.border = "2px solid red";
+            passwordInput.focus();
+            return;
+            } else {
+                passwordInput.style.border = "1px solid #ddd";
+            }
+
+            // 4. Digər boş sahələrin yoxlanması
+            if (!fullName || !username) {
+                alert("Zəhmət olmasa ad və istifadəçi adını doldurun!");
+            return;
+            }
+
+            // 5. Hər şey qaydasındadırsa, serverə göndər
+            const registerModel = {fullName, email, username, password};
+
+            try {
+                const response = await fetch('/api/auth/register', {
+                method: 'POST',
+            headers: {'Content-Type': 'application/json' },
+            body: JSON.stringify(registerModel)
+                });
+
+            if (response.ok) {
+                alert("Qeydiyyat uğurludur! Giriş səhifəsinə yönləndirilirsiniz.");
+            window.location.href = 'login.html';
+                } else {
+                    const errorData = await response.json();
+            alert("Server xətası: " + (errorData.message || "Məlumatlar uyğun deyil."));
+                }
+            } catch (error) {
+                console.error("Xəta:", error);
+            alert("Serverlə əlaqə kəsildi!");
+            }
+        }
+    </script>
+    </script>
+
+</body>
+</html>

@@ -5,9 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Anipat - Heyvan Sahibləndirmə</title>
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png">
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -24,8 +22,9 @@
 </head>
 
 <body>
+    
     <header>
-        <div class="header-area ">
+        <div class="header-area">
             <div class="header-top_area">
                 <div class="container">
                     <div class="row">
@@ -37,7 +36,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-4 ">
+                        <div class="col-lg-6 col-md-4">
                             <div class="social_media_links">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-pinterest-p"></i></a>
@@ -64,21 +63,10 @@
                                     <ul id="navigation">
                                         <li><a href="index.html">Ana Səhifə</a></li>
                                         <li><a href="about.html">Haqqımızda</a></li>
-                                        <li>
-                                            <a href="#">Bloq <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">Bloq</a></li>
-                                                <li><a href="single-blog.html">Məqalə</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Səhifələr <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="elements.html">Elementlər</a></li>
-                                            </ul>
-                                        </li>
                                         <li><a href="service.html">Xidmətlər</a></li>
                                         <li><a href="contact.html">Əlaqə</a></li>
+
+                                        <li id="auth-box"></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -99,7 +87,7 @@
                     <div class="col-lg-5 col-md-6">
                         <div class="slider_text">
                             <h3>Heyvanlarınıza <br> <span>Qayğı Göstəririk</span></h3>
-                            <p>Onların xoşbəxtliyi və sağlamlığı bizim üçün önəmlidir. <br> Hər bir canlının sevgi dolu bir yuvaya ehtiyacı var.</p>
+                            <p>Onların xoşbəxtliyi bizim üçün önəmlidir. <br> Hər bir canlının sevgi dolu bir yuvaya ehtiyacı var.</p>
                             <a href="contact.html" class="boxed-btn4">Bizimlə Əlaqə</a>
                         </div>
                     </div>
@@ -116,34 +104,12 @@
             <div class="row justify-content-center ">
                 <div class="col-lg-7 col-md-10">
                     <div class="section_title text-center mb-95">
-                        <h3>Hər bir dostumuz üçün xidmətlər</h3>
-                        <p>Biz fərdi qayğı və peşəkar xidmətlər təklif edirik, sağlamlıqdan tutmuş əyləncəyə qədər.</p>
+                        <h3>Xidmətlərimiz</h3>
+                        <p>Heyvanlarınızın sağlamlığı üçün peşəkar komandamızla xidmətinizdəyik.</p>
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center" id="services-container">
-            </div>
-        </div>
-    </div>
-
-    <div class="pet_care_area">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5 col-md-6">
-                    <div class="pet_thumb">
-                        <img src="/img/about/pet_care.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 offset-lg-1 col-md-6">
-                    <div class="pet_info">
-                        <div class="section_title">
-                            <h3><span>Sizin qədər</span> <br> Qayğı göstəririk</h3>
-                            <p>Heyvanların baxımı və sağlamlığı üçün lazım olan bütün şəraiti təmin edirik. Onların komfortu bizim bir nömrəli vəzifəmizdir.</p>
-                            <a href="about.html" class="boxed-btn3">Haqqımızda</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="row" id="services-container"></div>
         </div>
     </div>
 
@@ -153,9 +119,9 @@
                 <div class="col-lg-5">
                     <div class="adapt_help">
                         <div class="section_title">
-                            <h3><span>Köməyinizə</span> ehtiyacımız var</h3>
-                            <p>Siz də bir heyvanı sahiblənərək onun həyatını dəyişə bilərsiniz. Onların tək ümidi bizik.</p>
-                            <a href="contact.html" class="boxed-btn3">Əlaqə Saxla</a>
+                            <h3><span>Onlara</span> Kömək Lazımdır</h3>
+                            <p>Siz də bir canlını sahiblənərək onun bütün həyatını dəyişdirə bilərsiniz.</p>
+                            <a href="contact.html" class="boxed-btn3">Bizimlə Əlaqə</a>
                         </div>
                     </div>
                 </div>
@@ -167,7 +133,7 @@
                                     <img src="/img/adapt_icon/1.png" alt="">
                                     <div class="adapt_content">
                                         <h3 class="counter">452</h3>
-                                        <p>Heyvan mövcuddur</p>
+                                        <p>Sahibləndirilən</p>
                                     </div>
                                 </div>
                             </div>
@@ -176,14 +142,7 @@
                                     <img src="/img/adapt_icon/3.png" alt="">
                                     <div class="adapt_content">
                                         <h3><span class="counter">52</span>+</h3>
-                                        <p>Yeni Yuva</p>
-                                    </div>
-                                </div>
-                                <div class="single_adapt text-center">
-                                    <img src="/img/adapt_icon/2.png" alt="">
-                                    <div class="adapt_content">
-                                        <h3><span class="counter">120</span>+</h3>
-                                        <p>Xilas Edilən</p>
+                                        <p>Heyvan Növü</p>
                                     </div>
                                 </div>
                             </div>
@@ -194,49 +153,16 @@
         </div>
     </div>
 
-    <div class="contact_anipat">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section_title text-center mb-95">
-                        <h3>Sahibləndirilməyi gözləyən dostlarımız</h3>
-                        <p>Onların hər birinin isti bir yuvaya ehtiyacı var. Bu gün bir dost qazanın!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row" id="pets-container">
-            </div>
-            <div class="row justify-content-center mt-5">
-                <a href="pets.html" class="boxed-btn3">Hamısına bax</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="testimonial_area">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 col-md-10">
-                    <div class="section_title text-center mb-95">
-                        <h3>Müştərilərimizin Rəyləri</h3>
-                        <p>Sizdən gələn rəylər bizi daha da həvəsləndirir.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center" id="feedback-container"></div>
-        </div>
-    </div>
-
     <div class="team_area">
         <div class="container">
-            <div class="row justify-content-center ">
-                <div class="col-lg-6 col-md-10">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 col-md-10">
                     <div class="section_title text-center mb-95">
                         <h3>Komandamız</h3>
-                        <p>Heyvansevər və peşəkar heyətimizlə tanış olun.</p>
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center" id="team-container"></div>
+            <div class="row" id="team-container"></div>
         </div>
     </div>
 
@@ -249,41 +175,14 @@
                             <h3 class="footer_title">Əlaqə</h3>
                             <ul class="address_line">
                                 <li>+994 50 000 00 00</li>
-                                <li><a href="#">info@anipat.az</a></li>
-                                <li>Bakı, Azərbaycan</li>
+                                <li>info@anipat.az</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-6 col-lg-3">
                         <div class="footer_widget">
-                            <h3 class="footer_title">Xidmətlər</h3>
-                            <ul class="links">
-                                <li><a href="#">Heyvan Sığortası</a></li>
-                                <li><a href="#">Cərrahiyyə</a></li>
-                                <li><a href="#">Sahibləndirmə</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-3">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">Sürətli Keçid</h3>
-                            <ul class="links">
-                                <li><a href="about.html">Haqqımızda</a></li>
-                                <li><a href="#">Məxfilik Siyasəti</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-3">
-                        <div class="footer_widget">
-                            <div class="footer_logo"><img src="/img/logo.png" alt=""></div>
-                            <p class="address_text">Heyvanların xoşbəxtliyi üçün çalışırıq.</p>
-                            <div class="socail_links">
-                                <ul>
-                                    <li><a href="#"><i class="ti-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ti-pinterest"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                </ul>
+                            <div class="footer_logo">
+                                <a href="#"><img src="/img/logo.png" alt=""></a>
                             </div>
                         </div>
                     </div>
@@ -292,79 +191,10 @@
         </div>
     </footer>
 
-    <script src="/js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/owl.carousel.min.js"></script>
-    <script src="/js/isotope.pkgd.min.js"></script>
-    <script src="/js/ajax-form.js"></script>
-    <script src="/js/waypoints.min.js"></script>
-    <script src="/js/jquery.counterup.min.js"></script>
-    <script src="/js/imagesloaded.pkgd.min.js"></script>
-    <script src="/js/scrollIt.js"></script>
-    <script src="/js/jquery.scrollUp.min.js"></script>
-    <script src="/js/wow.min.js"></script>
-    <script src="/js/nice-select.min.js"></script>
     <script src="/js/jquery.slicknav.min.js"></script>
-    <script src="/js/jquery.magnific-popup.min.js"></script>
-    <script src="/js/plugins.js"></script>
-    <script src="/js/gijgo.min.js"></script>
     <script src="/js/main.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            // API-dən heyvanları çəkmək
-            fetch("/api/pet")
-                .then(response => response.json())
-                .then(data => {
-                    const container = document.getElementById("pets-container");
-                    container.innerHTML = "";
-
-                    // Yalnız aktiv heyvanları göstər
-                    const activePets = data.filter(p => p.isActive === true && p.isAdopted === false);
-
-                    if (activePets.length === 0) {
-                        container.innerHTML = "<p class='text-center w-100'>Hazırda sahibləndiriləcək heyvan tapılmadı.</p>";
-                        return;
-                    }
-
-                    activePets.forEach(pet => {
-                        const petHtml = `
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single_service text-center" style="margin-bottom:30px; border: 1px solid #eee; padding: 20px; border-radius: 15px;">
-                                    <div class="thumb">
-                                        <img src="${pet.imageUrl || '/img/about/pet_care.png'}" style="width:100%; height:250px; object-fit:cover; border-radius:10px;" alt="">
-                                    </div>
-                                    <div class="service_content mt-4">
-                                        <h3 style="text-transform: capitalize;">${pet.name}</h3>
-                                        <p>${pet.age} yaş | ${pet.city}</p>
-                                        <p><i>${pet.description || 'Yeni yuva axtarır'}</i></p>
-                                        <a href="contact.html" class="boxed-btn4 mt-2">Məni Sahiblən</a>
-                                    </div>
-                                </div>
-                            </div>`;
-                        container.innerHTML += petHtml;
-                    });
-                })
-                .catch(err => {
-                    console.error("Xəta baş verdi:", err);
-                    document.getElementById("pets-container").innerHTML = "<p>Məlumat yüklənə bilmədi.</p>";
-                });
-
-            // Counter animasiyası
-            $('.counter').each(function () {
-                $(this).prop('Counter', 0).animate({
-                    Counter: $(this).text()
-                }, {
-                    duration: 2000,
-                    easing: 'swing',
-                    step: function (now) {
-                        $(this).text(Math.ceil(now));
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>

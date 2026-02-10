@@ -146,6 +146,7 @@ wwwroot\img\team\1.png
 wwwroot\img\team\2.png
 wwwroot\img\team\3.png
 wwwroot\img\testmonial\1.png
+wwwroot\index.html
 wwwroot\js\ajax-form.js
 wwwroot\js\bootstrap.min.js
 wwwroot\js\contact.js
@@ -170,6 +171,7 @@ wwwroot\js\vendor\jquery-1.12.4.min.js
 wwwroot\js\vendor\modernizr-3.5.0.min.js
 wwwroot\js\waypoints.min.js
 wwwroot\js\wow.min.js
+wwwroot\login.html
 wwwroot\scss\style.scss
 wwwroot\scss\_about.scss
 wwwroot\scss\_adapt.scss
@@ -198,4 +200,4 @@ wwwroot\scss\_slider.scss
 wwwroot\scss\_team.scss
 wwwroot\scss\_testmonial.scss
 wwwroot\scss\_varriable.scss
-wwwroot\index.html
+wwwroot\register.html
