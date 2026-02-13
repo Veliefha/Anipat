@@ -1,78 +1,49 @@
 ﻿(function ($) {
     "use strict";
 
-    // 1. ÇIXIŞ FUNKSİYASI
-    window.logOut = function () {
-        localStorage.clear();
-        window.location.href = "index.html"; // Səhifəni yönləndir və yenilə
-    };
+    // 1. API-dən Servisləri Çəkmək
+    async function fetchServices() {
+        try {
+            const response = await fetch('/api/Service');
+            const services = await response.json();
+            const container = document.getElementById('services-container');
 
-    // 2. AUTH RENDER (Adı və Düymələri göstərmək)
-    function renderAuth() {
-        const name = localStorage.getItem('userName');
-        const role = localStorage.getItem('userRole');
+            if (!container) return;
+            container.innerHTML = ""; // Köhnə statik məzmunu silirik
 
-        // Bütün #auth-box elementlərini tapırıq (normal və mobil menyu daxil)
-        // Slicknav kopyalayanda ID-ləri də kopyaladığı üçün querySelectorAll lazımdır
-        const authBoxes = document.querySelectorAll('#auth-box');
+            services.forEach(item => {
+                // Sığorta: Backend-dən gələn datanın key-lərini yoxla
+                const title = item.title || item.Title || "No Title";
+                const desc = item.description || item.Description || "";
+                const icon = item.icon || item.Icon || "service_icon_1.png";
 
-        authBoxes.forEach(box => {
-            if (name) {
-                // Giriş edilibsə
-                box.innerHTML = `
-                    <div class="auth-wrapper" style="display: flex; align-items: center; gap: 10px; padding: 5px 10px;">
-                        <span style="color:#d32f2f; font-weight:bold; white-space: nowrap;">🐾 ${name}</span>
-                        <button onclick="logOut()" style="background: #f4f4f4; color: #d32f2f; border: 1px solid #ddd; padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 600;">Çıxış</button>
-                    </div>
-                `;
-            } else {
-                // Giriş edilməyibsə
-                box.innerHTML = `
-                    <div class="auth-wrapper" style="display: flex; align-items: center; gap: 10px; padding: 5px 10px;">
-                        <a href="login.html" style="font-weight:600; color: #222 !important;">Giriş</a>
-                        <a href="register.html" style="background: #d32f2f; color: white !important; padding: 8px 18px; border-radius: 20px; font-weight: 600; text-decoration: none; font-size: 13px;">Qeydiyyat</a>
-                    </div>
-                `;
-            }
-        });
+                container.innerHTML += `
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single_service">
+                             <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
+                                 <div class="service_icon">
+                                     <img src="/img/service/${icon}" alt="">
+                                 </div>
+                             </div>
+                             <div class="service_content text-center">
+                                <h3>${title}</h3>
+                                <p>${desc}</p>
+                             </div>
+                        </div>
+                    </div>`;
+            });
+        } catch (error) {
+            console.error("Servislər yüklənərkən xəta:", error);
+        }
     }
 
-    // 3. DATA FETCH (Xidmətlər və Komanda)
-    const loadData = () => {
-        const serviceContainer = document.getElementById("services-container");
-        if (serviceContainer) {
-            fetch("/api/service")
-                .then(res => res.json())
-                .then(data => {
-                    serviceContainer.innerHTML = data.map(s => `
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single_service text-center">
-                                <h3>${s.name}</h3>
-                                <p>${s.description}</p>
-                            </div>
-                        </div>`).join('');
-                }).catch(err => console.log(err));
-        }
-
-        const teamContainer = document.getElementById("team-container");
-        if (teamContainer) {
-            fetch("/api/team")
-                .then(res => res.json())
-                .then(data => {
-                    teamContainer.innerHTML = data.map(t => `
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single_team text-center">
-                                <h4>${t.name}</h4>
-                                <p>${t.position}</p>
-                            </div>
-                        </div>`).join('');
-                }).catch(err => console.log(err));
-        }
-    };
-
-    // 4. INITIALIZE
+    // 2. Carousel və Digər Pluginləri İşə Salmaq
     $(document).ready(function () {
-        // Menyu aktivləşdir
+
+        // Öncə datanı çəkirik
+        fetchServices();
+
+        // Mobil Menyu (SlickNav)
         var menu = $('ul#navigation');
         if (menu.length) {
             menu.slicknav({
@@ -82,18 +53,36 @@
             });
         }
 
-        // Həm dərhal, həm də SlickNav-ın kopyalaması bitəndən sonra render et
-        renderAuth();
-        loadData();
+        // Testimonial Slayderi (Dinamik data istifadə edəcəksənsə bura diqqət)
+        $('.textmonial_active').owlCarousel({
+            loop: true,
+            margin: 0,
+            items: 1,
+            autoplay: true,
+            navText: ['<i class="ti-angle-left"></i>', '<i class="ti-angle-right"></i>'],
+            nav: true,
+            dots: false,
+            autoplayHoverPause: true,
+            autoplaySpeed: 800,
+            responsive: {
+                0: { items: 1, nav: false },
+                767: { items: 1, nav: false },
+                992: { items: 1 }
+            }
+        });
 
-        // 500ms və 1500ms sonra təkrar yoxla (Mobil menyu gecikməsi üçün)
-        setTimeout(renderAuth, 500);
-        setTimeout(renderAuth, 1500);
-    });
+        // Sticky Header
+        $(window).on('scroll', function () {
+            var scroll = $(window).scrollTop();
+            if (scroll < 400) {
+                $("#sticky-header").removeClass("sticky");
+                $('#back-top').fadeIn(500);
+            } else {
+                $("#sticky-header").addClass("sticky");
+                $('#back-top').fadeIn(500);
+            }
+        });
 
-    $(window).on('scroll', function () {
-        if ($(window).scrollTop() < 400) { $("#sticky-header").removeClass("sticky"); }
-        else { $("#sticky-header").addClass("sticky"); }
     });
 
 })(jQuery);

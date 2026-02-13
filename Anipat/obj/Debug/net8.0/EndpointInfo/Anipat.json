@@ -244,98 +244,6 @@
             "description": "OK"
           }
         }
-      },
-      "post": {
-        "tags": [
-          "Service"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Service"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Service"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Service"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Service/{id}": {
-      "put": {
-        "tags": [
-          "Service"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Service"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Service"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Service"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Service"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
       }
     },
     "/api/Team": {
@@ -448,23 +356,23 @@
       "Feedback": {
         "type": "object",
         "properties": {
-          "id": {
+          "Id": {
             "type": "integer",
             "format": "int32"
           },
-          "author": {
+          "Author": {
             "type": "string",
             "nullable": true
           },
-          "position": {
+          "Position": {
             "type": "string",
             "nullable": true
           },
-          "text": {
+          "Text": {
             "type": "string",
             "nullable": true
           },
-          "image": {
+          "Image": {
             "type": "string",
             "nullable": true
           }
@@ -474,11 +382,11 @@
       "Login": {
         "type": "object",
         "properties": {
-          "username": {
+          "Username": {
             "type": "string",
             "nullable": true
           },
-          "password": {
+          "Password": {
             "type": "string",
             "nullable": true
           }
@@ -488,41 +396,41 @@
       "Pet": {
         "type": "object",
         "properties": {
-          "id": {
+          "Id": {
             "type": "integer",
             "format": "int32"
           },
-          "name": {
+          "Name": {
             "type": "string",
             "nullable": true
           },
-          "age": {
+          "Age": {
             "type": "integer",
             "format": "int32"
           },
-          "city": {
+          "City": {
             "type": "string",
             "nullable": true
           },
-          "description": {
+          "Description": {
             "type": "string",
             "nullable": true
           },
-          "imageUrl": {
+          "ImageUrl": {
             "type": "string",
             "nullable": true
           },
-          "energyLevel": {
+          "EnergyLevel": {
             "type": "string",
             "nullable": true
           },
-          "kidsFriendly": {
+          "KidsFriendly": {
             "type": "boolean"
           },
-          "isAdopted": {
+          "IsAdopted": {
             "type": "boolean"
           },
-          "isActive": {
+          "IsActive": {
             "type": "boolean"
           }
         },
@@ -531,41 +439,19 @@
       "Register": {
         "type": "object",
         "properties": {
-          "fullName": {
+          "FullName": {
             "type": "string",
             "nullable": true
           },
-          "email": {
+          "Email": {
             "type": "string",
             "nullable": true
           },
-          "username": {
+          "Username": {
             "type": "string",
             "nullable": true
           },
-          "password": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Service": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "icon": {
+          "Password": {
             "type": "string",
             "nullable": true
           }
@@ -575,19 +461,19 @@
       "Team": {
         "type": "object",
         "properties": {
-          "id": {
+          "Id": {
             "type": "integer",
             "format": "int32"
           },
-          "name": {
+          "Name": {
             "type": "string",
             "nullable": true
           },
-          "position": {
+          "Position": {
             "type": "string",
             "nullable": true
           },
-          "image": {
+          "Image": {
             "type": "string",
             "nullable": true
           }

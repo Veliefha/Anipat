@@ -22,7 +22,6 @@
 </head>
 
 <body>
-    
     <header>
         <div class="header-area">
             <div class="header-top_area">
@@ -65,7 +64,6 @@
                                         <li><a href="about.html">Haqqımızda</a></li>
                                         <li><a href="service.html">Xidmətlər</a></li>
                                         <li><a href="contact.html">Əlaqə</a></li>
-
                                         <li id="auth-box"></li>
                                     </ul>
                                 </nav>
@@ -99,54 +97,29 @@
         </div>
     </div>
 
+    <!-- service_area_start  -->
     <div class="service_area">
         <div class="container">
             <div class="row justify-content-center ">
                 <div class="col-lg-7 col-md-10">
                     <div class="section_title text-center mb-95">
-                        <h3>Xidmətlərimiz</h3>
-                        <p>Heyvanlarınızın sağlamlığı üçün peşəkar komandamızla xidmətinizdəyik.</p>
+                        <h3>Services for every dog</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
                     </div>
                 </div>
             </div>
-            <div class="row" id="services-container"></div>
+            <div class="row justify-content-center" id="services-container">
+                <!-- Backend-dən gələn service-lər buraya JS ilə əlavə olunacaq -->
+            </div>
         </div>
     </div>
+    <!-- service_area_end -->
 
-    <div class="adapt_area">
+    <div class="testmonial_area">
         <div class="container">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-lg-5">
-                    <div class="adapt_help">
-                        <div class="section_title">
-                            <h3><span>Onlara</span> Kömək Lazımdır</h3>
-                            <p>Siz də bir canlını sahiblənərək onun bütün həyatını dəyişdirə bilərsiniz.</p>
-                            <a href="contact.html" class="boxed-btn3">Bizimlə Əlaqə</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="adapt_about">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6 col-md-6">
-                                <div class="single_adapt text-center">
-                                    <img src="/img/adapt_icon/1.png" alt="">
-                                    <div class="adapt_content">
-                                        <h3 class="counter">452</h3>
-                                        <p>Sahibləndirilən</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="single_adapt text-center">
-                                    <img src="/img/adapt_icon/3.png" alt="">
-                                    <div class="adapt_content">
-                                        <h3><span class="counter">52</span>+</h3>
-                                        <p>Heyvan Növü</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="textmonial_active owl-carousel" id="feedback-container">
                     </div>
                 </div>
             </div>
@@ -162,7 +135,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row" id="team-container"></div>
+            <div class="row" id="team-container">
+            </div>
         </div>
     </div>
 
@@ -195,6 +169,12 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/owl.carousel.min.js"></script>
     <script src="/js/jquery.slicknav.min.js"></script>
+    <script src="/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <script src="/js/api-service.js"></script>
+
     <script src="/js/main.js"></script>
+    
 </body>
 </html>
