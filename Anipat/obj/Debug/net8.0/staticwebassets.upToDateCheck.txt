@@ -1,4 +1,3 @@
-wwwroot\admin\index.html
 wwwroot\css\animate.css
 wwwroot\css\bootstrap.min.css
 wwwroot\css\flaticon.css
@@ -160,6 +159,7 @@ wwwroot\js\jquery.scrollUp.min.js
 wwwroot\js\jquery.slicknav.min.js
 wwwroot\js\jquery.validate.min.js
 wwwroot\js\mail-script.js
+wwwroot\js\main.js
 wwwroot\js\nice-select.min.js
 wwwroot\js\owl.carousel.min.js
 wwwroot\js\plugins.js
@@ -169,8 +169,6 @@ wwwroot\js\vendor\jquery-1.12.4.min.js
 wwwroot\js\vendor\modernizr-3.5.0.min.js
 wwwroot\js\waypoints.min.js
 wwwroot\js\wow.min.js
-wwwroot\login.html
-wwwroot\register.html
 wwwroot\scss\style.scss
 wwwroot\scss\_about.scss
 wwwroot\scss\_adapt.scss
@@ -199,6 +197,3 @@ wwwroot\scss\_slider.scss
 wwwroot\scss\_team.scss
 wwwroot\scss\_testmonial.scss
 wwwroot\scss\_varriable.scss
-wwwroot\index.html
-wwwroot\js\api-service.js
-wwwroot\js\main.js
