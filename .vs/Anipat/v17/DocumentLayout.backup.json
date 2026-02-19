@@ -50,8 +50,8 @@
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Shared\\_Layout.cshtml*",
-              "RelativeToolTip": "Anipat\\Views\\Shared\\_Layout.cshtml*",
+              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Anipat\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAALoAAAAAAAAAAAAQwNEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-02-18T15:50:50.076Z",
@@ -67,8 +67,7 @@
               "RelativeToolTip": "Anipat\\Views\\_ViewStart.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-18T15:49:59.957Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-18T15:49:59.957Z"
             },
             {
               "$type": "Document",
@@ -80,8 +79,7 @@
               "RelativeToolTip": "Anipat\\Views\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-18T15:49:46.253Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-18T15:49:46.253Z"
             },
             {
               "$type": "Document",
@@ -93,8 +91,7 @@
               "RelativeToolTip": "Anipat\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-18T15:49:16.543Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-18T15:49:16.543Z"
             },
             {
               "$type": "Document",
@@ -106,8 +103,7 @@
               "RelativeToolTip": "Anipat\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T15:49:01.433Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-18T15:49:01.433Z"
             },
             {
               "$type": "Document",
@@ -119,8 +115,7 @@
               "RelativeToolTip": "Anipat\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-08T10:53:37.241Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-08T10:53:37.241Z"
             },
             {
               "$type": "Document",
