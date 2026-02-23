@@ -1,0 +1,45 @@
+﻿@model Team
+@{
+    Layout = "_AdminLayout";
+}
+
+<h2 class="header-title mb-4">✨ Komanda Üzvünü Redaktə Et</h2>
+
+<div class="card card-cici shadow-sm border-0 p-4">
+    <form asp-action="Update" method="post" enctype="multipart/form-data">
+
+        <input type="hidden" asp-for="Id" />
+
+        <div class="form-group mb-3">
+            <label class="font-weight-bold">Ad və Soyad</label>
+            <input asp-for="FullName" class="form-control" style="border-radius: 12px;" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label class="font-weight-bold">Vəzifə</label>
+            <input asp-for="Position" class="form-control" style="border-radius: 12px;" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label class="font-weight-bold d-block">Hazırkı Şəkil</label>
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <img src="~/img/team/@Model.ImageUrl" width="120" class="img-thumbnail mb-2" style="border-radius: 15px;" />
+            }
+            else
+            {
+                <span class="text-muted">Şəkil yoxdur</span>
+            }
+        </div>
+
+        <div class="form-group mb-4">
+            <label class="font-weight-bold">Yeni Şəkil Seç (Dəyişmək istəmirsinizsə boş buraxın)</label>
+            <input asp-for="ImageFile" type="file" class="form-control" style="border-radius: 12px;" accept="image/*" />
+        </div>
+
+        <div class="d-flex">
+            <button type="submit" class="btn btn-warning btn-cici text-white mr-2">Dəyişiklikləri Yadda Saxla</button>
+            <a asp-action="Index" class="btn btn-light btn-cici text-muted">Geri Qayıt</a>
+        </div>
+    </form>
+</div>

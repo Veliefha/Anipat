@@ -1,0 +1,43 @@
+﻿@model List<Pet>
+@{
+    Layout = "_AdminLayout";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>🐾 Heyvan Sığınacağı İdarəetməsi</h2>
+    <a asp-action="Create" class="btn btn-success btn-cici">Yeni Dost Əlavə Et</a>
+</div>
+
+<div class="card shadow-sm border-0">
+    <table class="table table-hover align-middle">
+        <thead class="table-light">
+            <tr>
+                <th>Şəkil</th>
+                <th>Ad / Cins</th>
+                <th>Məkan</th>
+                <th>Enerji</th>
+                <th>Status</th>
+                <th class="text-center">Əməliyyat</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td><img src="~/img/pets/@p.ImageUrl" width="60" height="60" class="rounded-circle shadow-sm" style="object-fit:cover" /></td>
+                    <td>
+                        <strong>@p.Name</strong> <br />
+                        <small class="text-muted">@p.Breed (@p.Age yaş)</small>
+                    </td>
+                    <td>@p.City</td>
+                    <td><span class="badge bg-info">@p.Energy</span></td>
+                    <td>@(p.IsAdopted ? "🏠 Övladlığa götürülüb" : "🦴 Sığınacaqdadır")</td>
+                    <td class="text-center">
+                        <a asp-action="Update" asp-route-id="@p.Id" class="btn btn-sm btn-warning text-white">Redaktə</a>
+                        <a asp-action="Delete" asp-route-id="@p.Id" class="btn btn-sm btn-danger" onclick="return confirm('Silinsin?')">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

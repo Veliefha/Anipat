@@ -1,4 +1,5 @@
 ﻿using Anipat.Models.Base;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Anipat.Models
 {
@@ -6,6 +7,8 @@ namespace Anipat.Models
     {
         public string FullName { get; set; } 
         public string Position { get; set; } 
-        public string ImageUrl { get; set; } 
+        public string ImageUrl { get; set; }
+        [NotMapped]
+        public IFormFile ImageFile { get; set; }
     }
 }

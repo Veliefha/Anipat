@@ -1,0 +1,67 @@
+﻿@model Pet
+@{
+    Layout = "_AdminLayout";
+}
+
+<h2 class="mb-4">✨ @Model.Name məlumatlarını yenilə</h2>
+
+<div class="card p-4 shadow-sm">
+    <form asp-action="Update" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label>Ad</label>
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label>Cins</label>
+                <input asp-for="Breed" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label>Yaş</label>
+                <input asp-for="Age" type="number" class="form-control" />
+            </div>
+            <div class="col-md-4 mb-3">
+                <label>Şəhər</label>
+                <input asp-for="City" class="form-control" />
+            </div>
+            <div class="col-md-4 mb-3">
+                <label>Enerji Səviyyəsi</label>
+                <select asp-for="Energy" class="form-control" asp-items="Html.GetEnumSelectList<EnergyLevel>()"></select>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label>Təsvir</label>
+            <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="form-check">
+                    <input asp-for="IsKidsFriendly" class="form-check-input" type="checkbox">
+                    <label class="form-check-label">Uşaqlarla dostdur</label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-check">
+                    <input asp-for="IsAdopted" class="form-check-input" type="checkbox">
+                    <label class="form-check-label text-success font-weight-bold">Övladlığa götürülüb</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label>Hazırkı Şəkil</label> <br />
+            <img src="~/img/pets/@Model.ImageUrl" width="150" class="img-thumbnail mb-2" />
+            <input asp-for="ImageFile" type="file" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg">Dəyişiklikləri Yadda Saxla</button>
+        <a asp-action="Index" class="btn btn-light btn-lg border">Geri</a>
+    </form>
+</div>

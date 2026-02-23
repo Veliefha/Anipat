@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Anipat.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260220160837_InitialCreate")]
+    [Migration("20260223152407_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

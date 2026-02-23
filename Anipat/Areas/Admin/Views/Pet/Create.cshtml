@@ -1,0 +1,78 @@
+﻿@model Pet
+@using Anipat.Models
+@{
+    Layout = "_AdminLayout";
+}
+
+<h2 class="header-title mb-4">🐾 Yeni Heyvan Dostu Əlavə Et</h2>
+
+<div class="card card-cici shadow-sm border-0 p-4">
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="font-weight-bold">Adı</label>
+                <input asp-for="Name" class="form-control" style="border-radius: 12px;" placeholder="Məs: Dostik" required />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="font-weight-bold">Cinsi (Breed)</label>
+                <input asp-for="Breed" class="form-control" style="border-radius: 12px;" placeholder="Məs: Golden Retriever" required />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label class="font-weight-bold">Yaşı</label>
+                <input asp-for="Age" type="number" class="form-control" style="border-radius: 12px;" />
+            </div>
+            <div class="col-md-4 mb-3">
+                <label class="font-weight-bold">Şəhər</label>
+                <input asp-for="City" class="form-control" style="border-radius: 12px;" placeholder="Məs: Bakı" />
+            </div>
+            <div class="col-md-4 mb-3">
+                <label class="font-weight-bold">Enerji Səviyyəsi</label>
+                <select asp-for="Energy" class="form-control" style="border-radius: 12px;"
+                        asp-items="Html.GetEnumSelectList<EnergyLevel>()">
+                    <option value="">Seçin...</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="font-weight-bold">Haqqında Qısa Məlumat</label>
+            <textarea asp-for="Description" class="form-control" rows="3" style="border-radius: 12px;" placeholder="Xarakteri, vərdişləri..."></textarea>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="custom-control custom-checkbox">
+                    <input asp-for="IsKidsFriendly" class="custom-control-input" id="kidsCheck">
+                    <label class="custom-control-label" for="kidsCheck">Uşaqlarla dostdur?</label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="custom-control custom-checkbox">
+                    <input asp-for="IsAdopted" class="custom-control-input" id="adoptCheck">
+                    <label class="custom-control-label text-success" for="adoptCheck font-weight-bold">Artıq sahiblənilib?</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group mb-4">
+            <label class="font-weight-bold text-danger">Şəkil Seçin</label>
+            <input asp-for="ImageFile" type="file" class="form-control-file p-2 border w-100" style="border-radius: 12px;" accept="image/*" required />
+            <small class="text-muted">Məsləhət görülən ölçü: 800x800px</small>
+        </div>
+
+        <hr />
+
+        <div class="d-flex justify-content-start mt-4">
+            <button type="submit" class="btn btn-success btn-cici mr-2 shadow-sm">
+                <i class="fas fa-save mr-1"></i> Sistemi Yadda Saxla
+            </button>
+            <a asp-action="Index" class="btn btn-light btn-cici text-muted border">
+                <i class="fas fa-arrow-left mr-1"></i> Geri Qayıt
+            </a>
+        </div>
+    </form>
+</div>

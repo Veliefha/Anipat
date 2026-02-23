@@ -20,11 +20,9 @@ namespace Anipat.Controllers
                 Services = _context.Services.ToList(),
                 Statistics = _context.Statistics.ToList(),
                 Testimonials = _context.Testimonials.ToList(),
-                Teams = _context.Teams.ToList(),
-                // Bu hissəni əlavə etdik ki, heyvanlar da ana səhifəyə gəlsin
-                LatestPets = _context.Pets.Where(p => !p.IsAdopted).Take(3).ToList()
+                TeamMembers = _context.Teams.ToList(), 
+                LatestPets = _context.Pets.Take(3).ToList()
             };
-
             return View(model);
         }
     }

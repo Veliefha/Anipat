@@ -1,0 +1,59 @@
+﻿@model List<Team>
+@{
+    Layout = "_AdminLayout";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="header-title">🐾 Komanda Üzvlərimiz</h2>
+    <a asp-action="Create" class="btn btn-success btn-cici shadow-sm">
+        <i class="fas fa-user-plus"></i> Yeni Üzv Əlavə Et
+    </a>
+</div>
+
+<div class="card card-cici shadow-sm border-0">
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0" style="vertical-align: middle;">
+            <thead class="bg-light">
+                <tr>
+                    <th class="p-3">Şəkil</th>
+                    <th class="p-3">Ad Soyad</th>
+                    <th class="p-3">Vəzifə</th>
+                    <th class="p-3 text-center">Əməliyyatlar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="p-3">
+                            <div class="img-container" style="width: 60px; height: 60px; overflow: hidden; border-radius: 50%; border: 3px solid #ff9f43;">
+                                <img src="~/img/team/@item.ImageUrl"
+                                     alt="@item.FullName"
+                                     style="width: 100%; height: 100%; object-fit: cover;"
+                                     onerror="this.src='/img/no-image.png';">
+                            </div>
+                        </td>
+                        <td class="p-3 font-weight-bold">@item.FullName</td>
+                        <td class="p-3"><span class="badge badge-pill badge-light text-secondary p-2">@item.Position</span></td>
+                        <td class="p-3 text-center">
+                            <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-sm btn-info rounded-circle mr-2 shadow-sm">
+                                <i class="fas fa-edit text-white"></i>
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger rounded-circle shadow-sm"
+                               onclick="return confirm('Bu komanda üzvünü silmək istədiyinizə əminsiniz?')">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@if (!Model.Any())
+{
+    <div class="text-center p-5">
+        <p class="text-muted">Hələ ki, komandada kimsə yoxdur. Birini əlavə etməyə nə deyirsən? ✨</p>
+    </div>
+}

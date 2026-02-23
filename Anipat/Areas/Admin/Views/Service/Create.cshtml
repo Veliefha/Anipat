@@ -1,0 +1,35 @@
+﻿@model Anipat.Models.Service
+@{
+    Layout = "_AdminLayout";
+}
+
+<h2 class="header-title mb-4">🆕 Yeni Xidmət Əlavə Et</h2>
+
+<div class="card card-cici shadow-sm border-0 p-4">
+    <form asp-action="Create" method="post">
+        <div class="form-group mb-3">
+            <label class="font-weight-bold">Xidmət Adı</label>
+            <input asp-for="Title" class="form-control" placeholder="Məs: Heyvanların Çimizdirilməsi" style="border-radius: 12px;" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label class="font-weight-bold">İkon Yolu (məs: flaticon-dog)</label>
+            <input asp-for="IconPath" class="form-control" style="border-radius: 12px;" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label class="font-weight-bold">Təsvir</label>
+            <textarea asp-for="Description" class="form-control" rows="4" style="border-radius: 12px;" placeholder="Xidmət haqqında qısa məlumat..."></textarea>
+        </div>
+
+        <div class="form-check mb-4">
+            <input asp-for="IsActive" class="form-check-input" type="checkbox" checked>
+            <label class="form-check-label">Aktiv olsun?</label>
+        </div>
+
+        <div class="d-flex">
+            <button type="submit" class="btn btn-success btn-cici mr-2">Əlavə Et</button>
+            <a asp-action="Index" class="btn btn-light btn-cici text-muted">Ləğv Et</a>
+        </div>
+    </form>
+</div>

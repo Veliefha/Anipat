@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Anipat Admin - Sevimli Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .sidebar {
+            background: linear-gradient(180deg, #ff9f43 0%, #ee5253 100%);
+            min-height: 100vh;
+            border-radius: 0 30px 30px 0;
+        }
+
+            .sidebar .nav-link {
+                color: white;
+                font-weight: 500;
+                margin: 10px;
+                border-radius: 10px;
+                transition: 0.3s;
+            }
+
+                .sidebar .nav-link:hover {
+                    background: rgba(255,255,255,0.2);
+                    transform: translateX(5px);
+                }
+
+                .sidebar .nav-link i {
+                    margin-right: 10px;
+                }
+
+        .main-content {
+            padding: 30px;
+        }
+
+        .card-cici {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+            .card-cici:hover {
+                transform: translateY(-5px);
+            }
+
+        .btn-cici {
+            border-radius: 15px;
+            padding: 10px 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+
+        .header-title {
+            color: #ee5253;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block sidebar shadow">
+                <div class="sidebar-sticky">
+                    <div class="text-center py-4">
+                        <img src="~/img/logo.png" alt="logo" style="max-width: 120px; filter: brightness(0) invert(1);">
+                        <p class="text-white mt-2 small">Pet Care Admin</p>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link" href="/Admin/Dashboard"><i class="fas fa-paw"></i> Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Admin/Service"><i class="fas fa-concierge-bell"></i> Xidmətlər</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Admin/Pet"><i class="fas fa-dog"></i> Heyvanlar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Admin/Team"><i class="fas fa-users"></i> Komanda</a></li>
+                        <hr class="bg-white mx-3">
+                        <li class="nav-item"><a class="nav-link" href="/" target="_blank"><i class="fas fa-external-link-alt"></i> Sayta Bax</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <main role="main" class="col-md-10 main-content">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+</body>
+</html>
