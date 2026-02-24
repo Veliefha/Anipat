@@ -1,4 +1,8 @@
-﻿<!doctype html>
+﻿@using Anipat.Models
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<AppUser> UserManager
+
+<!doctype html>
 <html class="no-js" lang="az">
 
 <head>
@@ -10,7 +14,6 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="~/img/favicon.png">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="~/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/css/owl.carousel.min.css">
     <link rel="stylesheet" href="~/css/magnific-popup.css">
@@ -22,6 +25,45 @@
     <link rel="stylesheet" href="~/css/animate.css">
     <link rel="stylesheet" href="~/css/slicknav.css">
     <link rel="stylesheet" href="~/css/style.css">
+
+    <style>
+        /* Profil Dizaynı */
+        .user-avatar {
+            width: 28px;
+            height: 28px;
+            background: #ff9f43;
+            color: white;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .user-name-text {
+            font-weight: 500;
+            color: #001D38;
+            vertical-align: middle;
+        }
+
+        .logout-link {
+            color: #ff4d4d !important;
+            font-weight: bold !important;
+        }
+
+        .login-btn-custom {
+            background: #ff9f43 !important;
+            color: white !important;
+            padding: 7px 20px !important;
+            border-radius: 30px !important;
+            margin-left: 10px;
+            line-height: 1 !important;
+            display: inline-block !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,7 +98,7 @@
                     <div class="row align-items-center">
                         <div class="col-xl-3 col-lg-3">
                             <div class="logo">
-                                <a href="index.html">
+                                <a asp-controller="Home" asp-action="Index">
                                     <img src="~/img/logo.png" alt="Anipat">
                                 </a>
                             </div>
@@ -65,23 +107,36 @@
                             <div class="main-menu d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="index.html">Ana Səhifə</a></li>
-                                        <li><a href="about.html">Haqqımızda</a></li>
-                                        <li>
-                                            <a href="#">Bloq <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">Bloq</a></li>
-                                                <li><a href="single-blog.html">Bloq Detalı</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Səhifələr <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="elements.html">Elementlər</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="service.html">Xidmətlər</a></li>
+                                        <li><a asp-controller="Home" asp-action="Index">Ana Səhifə</a></li>
+                                        <li><a href="#">Haqqımızda</a></li>
+                                        <li><a href="#">Xidmətlər</a></li>
+                                        <li><a href="#">Komandamız</a></li>
                                         <li><a href="contact.html">Əlaqə</a></li>
+
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                            var user = await UserManager.GetUserAsync(User);
+                                            var firstName = user?.FirstName ?? "User";
+
+                                            <li>
+                                                <a href="#">
+                                                    <span class="user-avatar">@firstName.Substring(0, 1).ToUpper()</span>
+                                                    <span class="user-name-text">@firstName</span>
+                                                    <i class="ti-angle-down"></i>
+                                                </a>
+                                                <ul class="submenu">
+                                                    @if (User.IsInRole("Admin"))
+                                                    {
+                                                        <li><a asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Admin Panel</a></li>
+                                                    }
+                                                    <li><a asp-area="Admin" asp-controller="Account" asp-action="Logout" class="logout-link">Çıxış</a></li>
+                                                </ul>
+                                            </li>
+                                        }
+                                        else
+                                        {
+                                            <li><a asp-area="Admin" asp-controller="Account" asp-action="Login" class="login-btn-custom">Giriş</a></li>
+                                        }
                                     </ul>
                                 </nav>
                             </div>
@@ -101,7 +156,6 @@
         <div class="footer_top">
             <div class="container">
                 <div class="row">
-
                     <div class="col-xl-3 col-md-6 col-lg-3">
                         <div class="footer_widget">
                             <h3 class="footer_title">Bizimlə Əlaqə</h3>
@@ -112,66 +166,49 @@
                             </ul>
                         </div>
                     </div>
-
                     <div class="col-xl-3 col-md-6 col-lg-3">
                         <div class="footer_widget">
                             <h3 class="footer_title">Xidmətlərimiz</h3>
                             <ul class="links">
-                                <li><a href="#">Heyvan Sığortası</a></li>
-                                <li><a href="#">Cərrahi Əməliyyatlar</a></li>
                                 <li><a href="#">Sahiblənmə</a></li>
-                                <li><a href="#">Profilaktik Müayinə</a></li>
-                                <li><a href="#">Baytarlıq Məsləhəti</a></li>
+                                <li><a href="#">Müayinə</a></li>
+                                <li><a href="#">Məsləhət</a></li>
                             </ul>
                         </div>
                     </div>
-
                     <div class="col-xl-3 col-md-6 col-lg-3">
                         <div class="footer_widget">
                             <h3 class="footer_title">Sürətli Keçid</h3>
                             <ul class="links">
                                 <li><a href="#">Haqqımızda</a></li>
                                 <li><a href="#">Məxfilik Siyasəti</a></li>
-                                <li><a href="#">İstifadə Şərtləri</a></li>
-                                <li><a href="#">Giriş</a></li>
-                                <li><a href="#">Tez-tez Verilən Suallar</a></li>
                             </ul>
                         </div>
                     </div>
-
                     <div class="col-xl-3 col-md-6 col-lg-3">
                         <div class="footer_widget">
                             <div class="footer_logo">
-                                <a href="#">
-                                    <img src="~/img/logo.png" alt="Anipat">
-                                </a>
+                                <a href="#"><img src="~/img/logo.png" alt="Anipat"></a>
                             </div>
-                            <p class="address_text">
-                                Bakı şəhəri, Nizami küçəsi 25
-                            </p>
+                            <p class="address_text">Bakı şəhəri, Nizami küçəsi 25</p>
                             <div class="socail_links">
                                 <ul>
                                     <li><a href="#"><i class="ti-facebook"></i></a></li>
                                     <li><a href="#"><i class="ti-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-
         <div class="copy-right_text">
             <div class="container">
                 <div class="bordered_1px"></div>
                 <div class="row">
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
-                            © <script>document.write(new Date().getFullYear());</script>
-                            Bütün hüquqlar qorunur | Anipat komandası tərəfindən hazırlanmışdır
+                            © <script>document.write(new Date().getFullYear());</script> Anipat
                         </p>
                     </div>
                 </div>
@@ -179,7 +216,6 @@
         </div>
     </footer>
 
-    <!-- JS -->
     <script src="~/js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="~/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="~/js/popper.min.js"></script>
@@ -199,11 +235,6 @@
     <script src="~/js/plugins.js"></script>
     <script src="~/js/gijgo.min.js"></script>
     <script src="~/js/contact.js"></script>
-    <script src="~/js/jquery.ajaxchimp.min.js"></script>
-    <script src="~/js/jquery.form.js"></script>
-    <script src="~/js/jquery.validate.min.js"></script>
-    <script src="~/js/mail-script.js"></script>
     <script src="~/js/main.js"></script>
-
 </body>
 </html>

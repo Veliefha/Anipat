@@ -1,11 +1,14 @@
 ﻿using Anipat.DAL;
 using Anipat.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
 namespace Anipat.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")] 
+
     public class ServiceController : Controller
     {
         private readonly AppDbContext _context;

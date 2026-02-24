@@ -1,11 +1,14 @@
 ﻿using Anipat.DAL;
 using Anipat.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Anipat.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")] 
+    
     public class PetController : Controller
     {
         private readonly AppDbContext _context;
@@ -54,6 +57,7 @@ namespace Anipat.Areas.Admin.Controllers
 
         // --- REDAKTƏ (GET) ---
         [HttpGet]
+        
         public async Task<IActionResult> Update(int id)
         {
             var pet = await _context.Pets.FindAsync(id);

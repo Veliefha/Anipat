@@ -1,0 +1,103 @@
+﻿@model Anipat.ViewModels.Account.RegisterVM
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anipat - Qeydiyyat</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background: #f8f9fa;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-register {
+            width: 450px;
+            border-radius: 20px;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .btn-cici {
+            background: #ff9f43;
+            color: white;
+            border-radius: 12px;
+            transition: 0.3s;
+            border: none;
+        }
+
+            .btn-cici:hover {
+                background: #ee8e2e;
+                transform: translateY(-2px);
+                color: white;
+            }
+
+        .form-control {
+            border-radius: 10px;
+            padding: 25px 15px;
+            border: 1px solid #eee;
+        }
+
+        .logo-text {
+            color: #ff9f43;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card card-register p-4">
+        <div class="text-center mb-4">
+            <div class="logo-text">🐾 Anipat</div>
+            <p class="text-muted">Anipat ailəsinə qoşulun</p>
+        </div>
+
+        <form asp-action="Register" method="post">
+            <div class="text-danger mb-3" asp-validation-summary="ModelOnly"></div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <input asp-for="FirstName" class="form-control" placeholder="Ad" />
+                    <span asp-validation-for="FirstName" class="text-danger small"></span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input asp-for="LastName" class="form-control" placeholder="Soyad" />
+                    <span asp-validation-for="LastName" class="text-danger small"></span>
+                </div>
+            </div>
+
+            <div class="form-group mb-3">
+                <input asp-for="Email" class="form-control" placeholder="E-mail ünvanı" />
+                <span asp-validation-for="Email" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <input asp-for="Password" class="form-control" placeholder="Parol" />
+                <span asp-validation-for="Password" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-4">
+                <input asp-for="ConfirmPassword" class="form-control" placeholder="Parol təkrarı" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
+            </div>
+
+            <button type="submit" class="btn btn-cici btn-block py-3 font-weight-bold shadow-sm">Qeydiyyatı Tamamla</button>
+
+            <div class="text-center mt-3">
+                <small class="text-muted">Artıq hesabınız var? <a asp-action="Login" class="text-warning">Giriş edin</a></small>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
