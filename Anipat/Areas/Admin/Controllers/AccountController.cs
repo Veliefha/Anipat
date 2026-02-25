@@ -2,6 +2,7 @@
 using Anipat.ViewModels.Account;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Anipat.Areas.Admin.Controllers
 {
@@ -39,14 +40,15 @@ namespace Anipat.Areas.Admin.Controllers
 
             if (result.Succeeded)
             {
-                // Hər ehtimala qarşı rollar bazada yoxdursa yaradırıq
+                // Rolları yoxla və yarat
                 if (!await _roleManager.RoleExistsAsync("Admin"))
                     await _roleManager.CreateAsync(new IdentityRole("Admin"));
                 if (!await _roleManager.RoleExistsAsync("User"))
                     await _roleManager.CreateAsync(new IdentityRole("User"));
 
-                // DİQQƏT: Əgər bazada ilk istifadəçisənsə, səni Admin edir
-                if (_userManager.Users.Count() == 1)
+                // İlk qeydiyyatdan keçən və ya spesifik email olan şəxsi Admin et
+                // QEYD: Buradakı emaili özünlə dəyişə bilərsən
+                if (await _userManager.Users.CountAsync() == 1 || newUser.Email == "admin@anipat.com")
                 {
                     await _userManager.AddToRoleAsync(newUser, "Admin");
                 }
@@ -55,7 +57,7 @@ namespace Anipat.Areas.Admin.Controllers
                     await _userManager.AddToRoleAsync(newUser, "User");
                 }
 
-                return RedirectToAction("Login");
+                return RedirectToAction(nameof(Login));
             }
 
             foreach (var error in result.Errors) ModelState.AddModelError("", error.Description);
@@ -77,27 +79,28 @@ namespace Anipat.Areas.Admin.Controllers
                 return View(loginVM);
             }
 
+            // lockoutOnFailure: true ilə giriş cəhdlərini izləyirik
             var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, loginVM.RememberMe, true);
 
-            if (!result.Succeeded)
+            if (result.Succeeded)
             {
+                // Admin panelə (Dashboard/Index) yönləndiririk
+                // Dashboard controller-in yəqin ki, Admin panelin ana səhifəsidir
+                return RedirectToAction("Index", "Dashboard", new { area = "Admin" });
+            }
+
+            if (result.IsLockedOut)
+                ModelState.AddModelError("", "Çox sayda uğursuz cəhd! Hesab bloklanıb.");
+            else
                 ModelState.AddModelError("", "E-mail və ya parol səhvdir!");
-                return View(loginVM);
-            }
 
-            // Əgər adminsənsə birbaşa Admin Panelə, deyilsənsə ana səhifəyə
-            if (await _userManager.IsInRoleAsync(user, "Admin"))
-            {
-                return RedirectToAction("Index", "Pet"); // Məsələn, Pet siyahısına
-            }
-
-            return Redirect("/"); // Normal user üçün ana səhifə
+            return View(loginVM);
         }
 
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Login");
+            return RedirectToAction(nameof(Login));
         }
     }
 }

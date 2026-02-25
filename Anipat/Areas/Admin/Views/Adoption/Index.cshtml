@@ -1,0 +1,87 @@
+﻿@using Anipat.Models.Enums
+@model List<AdoptionRequest>
+
+@{
+    ViewData["Title"] = "Sahiblənmə İstəkləri";
+    Layout = "_AdminLayout"; // Admin layout-un adının düzgün olduğundan əmin ol
+}
+
+<div class="container-fluid shadow p-4 mb-5 bg-white rounded">
+    <h2 class="mb-4 text-primary">📩 Sahiblənmə Müraciətləri</h2>
+
+    <table class="table table-hover border">
+        <thead class="table-light">
+            <tr>
+                <th>İstifadəçi</th>
+                <th>Heyvan</th>
+                <th>Tarix</th>
+                <th>Mesaj</th>
+                <th>Status</th>
+                <th>Əməliyyat</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <strong>@item.AppUser?.UserName</strong><br />
+                            <small class="text-muted">@item.AppUser?.Email</small>
+                        </td>
+                        <td>
+                            <span class="badge bg-secondary">@item.Pet?.Name</span>
+                        </td>
+                        <td>@item.RequestDate.ToString("dd.MM.yyyy HH:mm")</td>
+                        <td>
+                            <i class="text-muted">"@item.Message"</i>
+                        </td>
+                        <td>
+                            @if (item.Status == AdoptionStatus.Pending)
+                            {
+                                <span class="badge bg-warning text-dark">Gözləmədə</span>
+                            }
+                            else if (item.Status == AdoptionStatus.Approved)
+                            {
+                                <span class="badge bg-success">Təsdiqləndi</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">Rədd edildi</span>
+                            }
+                        </td>
+                        <td>
+                            @if (item.Status == AdoptionStatus.Pending)
+                            {
+                                <div class="d-flex gap-2">
+                                    <form asp-action="ChangeStatus" method="post">
+                                        <input type="hidden" name="id" value="@item.Id" />
+                                        <input type="hidden" name="newStatus" value="@AdoptionStatus.Approved" />
+                                        <button type="submit" class="btn btn-sm btn-outline-success">Təsdiqlə</button>
+                                    </form>
+
+                                    <form asp-action="ChangeStatus" method="post">
+                                        <input type="hidden" name="id" value="@item.Id" />
+                                        <input type="hidden" name="newStatus" value="@AdoptionStatus.Rejected" />
+                                        <button type="submit" class="btn btn-sm btn-outline-danger">Rədd et</button>
+                                    </form>
+                                </div>
+                            }
+                            else
+                            {
+                                <span class="text-muted small">Tamamlanıb</span>
+                            }
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="6" class="text-center py-4">Hələ ki heç bir müraciət yoxdur.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

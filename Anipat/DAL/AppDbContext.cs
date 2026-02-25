@@ -15,5 +15,6 @@ namespace Anipat.DAL
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<Team> Teams { get; set; }
         public DbSet<Pet> Pets { get; set; }
+        public DbSet<AdoptionRequest> AdoptionRequests { get; set; }
     }
 }

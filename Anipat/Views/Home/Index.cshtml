@@ -109,14 +109,16 @@
                         {
                             <div class="col-lg-6 col-md-6">
                                 <div class="single_adapt text-center">
-                                    <img src="@stat.IconPath" alt="">
+                                    <img src="~/img/adapt_icon/@stat.IconPath" alt="@stat.Title" style="width: 60px; height: 60px; margin-bottom: 15px;">
+
                                     <div class="adapt_content">
-                                        <h3 class="counter">@stat.Count</h3>
-                                        <p>@stat.Title</p>
+                                        <h3 class="counter" data-target="@stat.Count" style="font-size: 36px; font-weight: bold;">0</h3>
+                                        <p style="color: #666;">@stat.Title</p>
                                     </div>
                                 </div>
                             </div>
                         }
+                    </div>
                       
                     </div>
                 </div>
@@ -242,3 +244,34 @@
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const counters = document.querySelectorAll('.counter');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // Əgər statistika bölməsi ekranda görünürsə
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = +el.getAttribute('data-target');
+                    const increment = target / 100; // Sürəti burdan tənzimləyə bilərsən
+
+                    const updateCount = () => {
+                        const current = +el.innerText;
+                        if (current < target) {
+                            el.innerText = Math.ceil(current + increment);
+                            setTimeout(updateCount, 20); // Artım sürəti
+                        } else {
+                            el.innerText = target;
+                        }
+                    };
+                    updateCount();
+                    // Animasiya bir dəfə olsun deyə izləməni dayandırırıq
+                    observer.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 }); // Bölmənin yarısı görünəndə başla
+
+        counters.forEach(count => observer.observe(count));
+    });
+</script>

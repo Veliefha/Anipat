@@ -7,8 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Anipat.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Admin")] 
-    
+    [Authorize(Roles = "Admin")]
     public class PetController : Controller
     {
         private readonly AppDbContext _context;
@@ -27,17 +26,27 @@ namespace Anipat.Areas.Admin.Controllers
             return View(pets);
         }
 
+        // --- DETALLAR (BU HİSSƏ ƏLAVƏ EDİLDİ) ---
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var pet = await _context.Pets.FirstOrDefaultAsync(m => m.Id == id);
+
+            if (pet == null) return NotFound();
+
+            return View(pet);
+        }
+
         // --- YARATMAQ (GET) ---
         [HttpGet]
-        public IActionResult Create()
-        {
-            return View();
-        }
+        public IActionResult Create() => View();
 
         // --- YARATMAQ (POST) ---
         [HttpPost]
         public async Task<IActionResult> Create(Pet pet)
         {
+            // ModelState yoxlaması əlavə etmək yaxşı olar
             if (pet.ImageFile != null)
             {
                 string fileName = Guid.NewGuid().ToString() + "_" + pet.ImageFile.FileName;
@@ -57,7 +66,6 @@ namespace Anipat.Areas.Admin.Controllers
 
         // --- REDAKTƏ (GET) ---
         [HttpGet]
-        
         public async Task<IActionResult> Update(int id)
         {
             var pet = await _context.Pets.FindAsync(id);
@@ -74,14 +82,12 @@ namespace Anipat.Areas.Admin.Controllers
 
             if (pet.ImageFile != null)
             {
-                // Köhnə şəkli silirik
                 if (!string.IsNullOrEmpty(dbPet.ImageUrl))
                 {
                     string oldPath = Path.Combine(_env.WebRootPath, "img/pets", dbPet.ImageUrl);
                     if (System.IO.File.Exists(oldPath)) System.IO.File.Delete(oldPath);
                 }
 
-                // Yeni şəkli yükləyirik
                 string fileName = Guid.NewGuid().ToString() + "_" + pet.ImageFile.FileName;
                 string newPath = Path.Combine(_env.WebRootPath, "img/pets", fileName);
                 using (var stream = new FileStream(newPath, FileMode.Create))
@@ -91,7 +97,6 @@ namespace Anipat.Areas.Admin.Controllers
                 dbPet.ImageUrl = fileName;
             }
 
-            // Məlumatları yeniləyirik
             dbPet.Name = pet.Name;
             dbPet.Breed = pet.Breed;
             dbPet.Age = pet.Age;

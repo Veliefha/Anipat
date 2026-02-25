@@ -112,6 +112,7 @@ wwwroot\img\logo.png
 wwwroot\img\offers\1.png
 wwwroot\img\offers\2.png
 wwwroot\img\offers\3.png
+wwwroot\img\pets\e19b983e-9be3-4f61-b6ad-23a7ff586c9d_En Tatlı Walpaper.jpg
 wwwroot\img\post\next.png
 wwwroot\img\post\post_1.png
 wwwroot\img\post\post_10.png

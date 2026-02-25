@@ -22,7 +22,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
     options.User.RequireUniqueEmail = true;
 }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 
-// 3. Cookie Ayarları (Mütləqdir ki, Login səhifəsini tanısın)
+// 3. Cookie Ayarları
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Admin/Account/Login";
@@ -30,6 +30,31 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 
 var app = builder.Build();
+
+// --- ADMIN YARATMA VƏ ROL TƏYİNİ (YENİ HİSSƏ) ---
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
+
+    // 1. "Admin" rolunu bazada yaradılır (əgər yoxdursa)
+    if (!await roleManager.RoleExistsAsync("Admin"))
+    {
+        await roleManager.CreateAsync(new IdentityRole("Admin"));
+    }
+
+    // 2. Sənin hesabını Admin edirik (ÖZ EMAİLİNİ BURA YAZ)
+    var myUser = await userManager.FindByEmailAsync("faxriyyaveliyeva@anipat.com");
+
+    if (myUser != null)
+    {
+        if (!await userManager.IsInRoleAsync(myUser, "Admin"))
+        {
+            await userManager.AddToRoleAsync(myUser, "Admin");
+        }
+    }
+}
+// ----------------------------------------------
 
 if (!app.Environment.IsDevelopment())
 {
@@ -42,8 +67,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// 4. BURA DİQQƏT: Sıralama belə olmalıdır!
-app.UseAuthentication(); // BU YOX İDİ, ƏLAVƏ EDİLDİ
+// 4. Sıralama mütləqdir
+app.UseAuthentication();
 app.UseAuthorization();
 
 // 5. Routes

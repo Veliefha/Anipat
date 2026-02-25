@@ -1,0 +1,52 @@
+﻿@using Anipat.Models.Enums
+@model List<AdoptionRequest>
+
+<div class="container my-5">
+    <div class="card shadow-sm p-4" style="border-radius: 15px;">
+        <h2 class="mb-4 text-primary">🐾 Sahiblənmə Müraciətlərim</h2>
+
+        @if (Model != null && Model.Any())
+        {
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Heyvan</th>
+                            <th>Tarix</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="fw-bold">@item.Pet?.Name</td>
+                                <td class="text-muted">@item.RequestDate.ToString("dd.MM.yyyy")</td>
+                                <td>
+                                    @if (item.Status == AdoptionStatus.Pending)
+                                    {
+                                        <span class="badge bg-warning text-dark px-3 py-2">Gözləmədə...</span>
+                                    }
+                                    else if (item.Status == AdoptionStatus.Approved)
+                                    {
+                                        <span class="badge bg-success px-3 py-2">Təsdiq olundu ✅</span>
+                                    }
+                                    else if (item.Status == AdoptionStatus.Rejected)
+                                    {
+                                        <span class="badge bg-danger px-3 py-2">Rədd edildi ❌</span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-info py-4 text-center">
+                <p class="mb-0">Hələ ki, heç bir müraciətiniz yoxdur. Dostlarımızı sahiblənməyə tələsin! 🐶</p>
+            </div>
+        }
+    </div>
+</div>

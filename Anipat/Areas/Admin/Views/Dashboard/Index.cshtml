@@ -1,6 +1,21 @@
-﻿@{
+﻿@model IEnumerable<AdoptionRequest>
+@using Anipat.Models.Enums
+@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
+
+@{
+    // Əgər istifadəçi Admin deyilsə, onu AccessDenied (Giriş Qadağandır) səhifəsinə göndər
+    if (!User.IsInRole("Admin"))
+    {
+        Context.Response.Redirect("/Account/AccessDenied");
+        // Və ya birbaşa Login-ə ata bilərsən:
+        // Context.Response.Redirect("/Account/Login");
+    }
+}
+@{
     Layout = "_AdminLayout";
 }
+
 
 <h2 class="header-title mb-4">Xoş Gəldin, Heyvansevər Admin! 🐾</h2>
 
@@ -48,6 +63,97 @@
             </div>
             <a href="/Admin/Team" class="btn btn-info btn-cici text-white mt-3">Üzvləri Gör</a>
         </div>
+    </div>
+</div>
+
+<div class="card border-0 shadow-sm mt-4" style="border-radius: 15px; overflow: hidden;">
+    <div class="card-header bg-white border-0 py-3">
+        <h5 class="mb-0 font-weight-bold"><i class="fas fa-list-ul mr-2 text-primary"></i> Aktiv Müraciətlər</h5>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead class="thead-light">
+                <tr>
+                    <th class="border-0">İstifadəçi</th>
+                    <th class="border-0">Heyvan Dostumuz</th>
+                    <th class="border-0">Status</th>
+                    <th class="border-0">Tarix</th>
+                    <th class="border-0 text-right">Əməliyyat</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="py-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar-sm mr-3 bg-light rounded-circle p-2 text-center" style="width: 40px;">
+                                        <i class="fas fa-user text-muted"></i>
+                                    </div>
+                                    <div>
+                                        @if (item.AppUser != null)
+                                        {
+                                            <span class="font-weight-bold d-block">@item.AppUser.FirstName @item.AppUser.LastName</span>
+                                            <small class="text-muted">@item.AppUser.Email</small>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-danger d-block font-weight-bold">İstifadəçi tapılmadı</span>
+                                            <small class="text-muted">ID: @item.AppUserId</small>
+                                        }
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-3 font-weight-bold">
+                                @(item.Pet?.Name ?? "Silinmiş Heyvan (ID: " + item.PetId + ")")
+                            </td>
+                            <td class="py-3">
+                                @if (item.Status == AdoptionStatus.Pending)
+                                {
+                                    <span class="badge badge-pill badge-warning px-3 py-2"><i class="fas fa-clock mr-1"></i> Gözləyir</span>
+                                }
+                                else if (item.Status == AdoptionStatus.Approved)
+                                {
+                                    <span class="badge badge-pill badge-success px-3 py-2"><i class="fas fa-check mr-1"></i> Təsdiq</span>
+                                }
+                                else if (item.Status == AdoptionStatus.Rejected)
+                                {
+                                    <span class="badge badge-pill badge-danger px-3 py-2"><i class="fas fa-times mr-1"></i> Rədd</span>
+                                }
+                            </td>
+                            <td class="py-3 text-muted">@item.RequestDate.ToString("dd.MM.yyyy")</td>
+                            <td class="py-3 text-right">
+                                @if (item.Status == AdoptionStatus.Pending)
+                                {
+                                    <div class="btn-group shadow-sm" role="group">
+                                        <form asp-controller="Adoption" asp-action="ChangeStatus" method="post" class="d-inline">
+                                            <input type="hidden" name="id" value="@item.Id" />
+                                            <input type="hidden" name="newStatus" value="@AdoptionStatus.Approved" />
+                                            <button type="submit" class="btn btn-sm btn-success border-0 px-3">
+                                                <i class="fas fa-check"></i>
+                                            </button>
+                                        </form>
+                                        <form asp-controller="Adoption" asp-action="ChangeStatus" method="post" class="d-inline">
+                                            <input type="hidden" name="id" value="@item.Id" />
+                                            <input type="hidden" name="newStatus" value="@AdoptionStatus.Rejected" />
+                                            <button type="submit" class="btn btn-sm btn-danger border-0 px-3">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <span class="text-muted small italic">Tamamlanıb</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
     </div>
 </div>
 

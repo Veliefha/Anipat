@@ -150,6 +150,7 @@ C:\Users\fexriyye\Desktop\Anipat\Anipat\bin\Debug\net8.0\Anipat.pdb
 C:\Users\fexriyye\Desktop\Anipat\Anipat\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\fexriyye\Desktop\Anipat\Anipat\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\fexriyye\Desktop\Anipat\Anipat\bin\Debug\net8.0\Humanizer.dll
+C:\Users\fexriyye\Desktop\Anipat\Anipat\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\fexriyye\Desktop\Anipat\Anipat\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\fexriyye\Desktop\Anipat\Anipat\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 C:\Users\fexriyye\Desktop\Anipat\Anipat\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -263,6 +264,8 @@ C:\Users\fexriyye\Desktop\Anipat\Anipat\obj\Debug\net8.0\Anipat.AssemblyInfo.cs
 C:\Users\fexriyye\Desktop\Anipat\Anipat\obj\Debug\net8.0\Anipat.csproj.CoreCompileInputs.cache
 C:\Users\fexriyye\Desktop\Anipat\Anipat\obj\Debug\net8.0\Anipat.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\fexriyye\Desktop\Anipat\Anipat\obj\Debug\net8.0\Anipat.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\fexriyye\Desktop\Anipat\Anipat\obj\Debug\net8.0\Anipat.RazorAssemblyInfo.cache
+C:\Users\fexriyye\Desktop\Anipat\Anipat\obj\Debug\net8.0\Anipat.RazorAssemblyInfo.cs
 C:\Users\fexriyye\Desktop\Anipat\Anipat\obj\Debug\net8.0\Anipat.sourcelink.json
 C:\Users\fexriyye\Desktop\Anipat\Anipat\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\fexriyye\Desktop\Anipat\Anipat\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
@@ -279,6 +282,3 @@ C:\Users\fexriyye\Desktop\Anipat\Anipat\obj\Debug\net8.0\refint\Anipat.dll
 C:\Users\fexriyye\Desktop\Anipat\Anipat\obj\Debug\net8.0\Anipat.pdb
 C:\Users\fexriyye\Desktop\Anipat\Anipat\obj\Debug\net8.0\Anipat.genruntimeconfig.cache
 C:\Users\fexriyye\Desktop\Anipat\Anipat\obj\Debug\net8.0\ref\Anipat.dll
-C:\Users\fexriyye\Desktop\Anipat\Anipat\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-C:\Users\fexriyye\Desktop\Anipat\Anipat\obj\Debug\net8.0\Anipat.RazorAssemblyInfo.cache
-C:\Users\fexriyye\Desktop\Anipat\Anipat\obj\Debug\net8.0\Anipat.RazorAssemblyInfo.cs
