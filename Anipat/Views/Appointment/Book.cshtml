@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Randevu Təqvimi";
+}
+
+<link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-8 mb-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <div id='calendar'></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card shadow p-3">
+                <h4 class="text-center mb-3">📝 Randevu Formu</h4>
+                <form asp-action="Book" method="post">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Seçilmiş Tarix</label>
+                        <input type="date" id="selectedDate" name="date" class="form-control" readonly required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Saat</label>
+                        <select name="slot" class="form-select" required>
+                            <option value="09:00 - 10:00">09:00 - 10:00</option>
+                            <option value="11:00 - 12:00">11:00 - 12:00</option>
+                            <option value="14:00 - 15:00">14:00 - 15:00</option>
+                            <option value="16:00 - 17:00">16:00 - 17:00</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Məqsəd</label>
+                        <textarea name="subject" class="form-control" rows="2" placeholder="Qısa qeyd..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 py-2">Müraciət et</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            locale: 'az', // Azərbaycan dili dəstəyi
+            selectable: true,
+            events: '/Appointment/GetBusySlots', // Dolu tarixləri burdan çəkir
+
+            // Tarix seçiləndə input-a yazsın
+            dateClick: function(info) {
+                var today = new Date().toISOString().split('T')[0];
+                if(info.dateStr < today) {
+                    alert("Keçmiş tarixə randevu almaq olmaz!");
+                    return;
+                }
+                document.getElementById('selectedDate').value = info.dateStr;
+
+                // Vizual olaraq seçilən tarixi vurğulamaq olar
+                document.querySelectorAll('.fc-day').forEach(el => el.style.backgroundColor = '');
+                info.dayEl.style.backgroundColor = '#e8f0fe';
+            }
+        });
+        calendar.render();
+    });
+</script>

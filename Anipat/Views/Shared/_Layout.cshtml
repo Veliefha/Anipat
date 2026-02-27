@@ -26,44 +26,54 @@
     <link rel="stylesheet" href="~/css/slicknav.css">
     <link rel="stylesheet" href="~/css/style.css">
 
+ 
     <style>
-        /* Profil Dizaynı */
+        /* Navbar-ı incəltmək üçün */
+        .main-header-area {
+            padding: 10px 0 !important; /* Ümumi hündürlük azaldıldı */
+        }
+
+        /* Səhifə aşağı düşəndə (Sticky olanda) hündürlük */
+        .sticky-header.sticky {
+            padding: 5px 0 !important;
+            background: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Menyu linklərinin arasındakı məsafə */
+        .main-menu ul li {
+            margin-right: 20px !important;
+        }
+
+            .main-menu ul li a {
+                padding: 10px 0 !important;
+                font-size: 15px !important;
+            }
+
+        /* Profil və Randevularım düyməsini bir az daha kompakt edək */
         .user-avatar {
-            width: 28px;
-            height: 28px;
-            background: #ff9f43;
-            color: white;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 12px;
-            margin-right: 5px;
-            vertical-align: middle;
+            width: 24px;
+            height: 24px;
+            font-size: 11px;
         }
 
         .user-name-text {
-            font-weight: 500;
-            color: #001D38;
-            vertical-align: middle;
+            font-size: 14px;
         }
 
-        .logout-link {
-            color: #ff4d4d !important;
-            font-weight: bold !important;
-        }
-
-        .login-btn-custom {
-            background: #ff9f43 !important;
-            color: white !important;
-            padding: 7px 20px !important;
-            border-radius: 30px !important;
-            margin-left: 10px;
-            line-height: 1 !important;
+        /* Randevularım düyməsini digər linklər kimi göstərək (padding-i sıfırlayaq) */
+        .nav-link.text-dark {
+            padding: 0 !important;
             display: inline-block !important;
         }
+
+        /* Logo ölçüsünü sticky olanda kiçiltmək */
+        .sticky-header.sticky .logo img {
+            max-width: 100px;
+            transition: 0.3s;
+        }
     </style>
+    
 </head>
 
 <body>
@@ -110,11 +120,17 @@
                                         <li><a asp-controller="Home" asp-action="Index">Ana Səhifə</a></li>
                                         <li><a href="#">Haqqımızda</a></li>
                                         <li><a href="#">Xidmətlər</a></li>
-                                        <li><a href="#">Komandamız</a></li>
-                                        <li><a href="contact.html">Əlaqə</a></li>
+                                        <li><a href="#">Komanda</a></li>
+                                        <li><a href="#">Əlaqə</a></li>
 
                                         @if (User.Identity.IsAuthenticated)
                                         {
+                                            <li>
+                                                <a asp-controller="Appointment" asp-action="MyAppointments">
+                                                    <i class="fa fa-calendar-check-o text-primary"></i> Randevularım
+                                                </a>
+                                            </li>
+
                                             var user = await UserManager.GetUserAsync(User);
                                             var firstName = user?.FirstName ?? "User";
 

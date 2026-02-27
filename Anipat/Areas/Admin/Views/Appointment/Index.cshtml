@@ -1,0 +1,90 @@
+﻿@using Anipat.Models.Enums
+@model IEnumerable<Anipat.Models.Appointment>
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml"; // Dizaynın gəlməsi üçün bu mütləqdir
+}
+
+<div class="container-fluid p-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="font-weight-bold text-dark"><i class="fas fa-calendar-alt mr-2 text-primary"></i> Gələn Randevu Müraciətləri</h2>
+    </div>
+
+    <div class="card border-0 shadow-sm" style="border-radius: 15px; overflow: hidden;">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="thead-light">
+                    <tr>
+                        <th class="border-0">İstifadəçi</th>
+                        <th class="border-0">Tarix</th>
+                        <th class="border-0">Saat</th>
+                        <th class="border-0">Məqsəd</th>
+                        <th class="border-0">Status</th>
+                        <th class="border-0 text-right">Əməliyyatlar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="py-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar-sm mr-3 bg-light rounded-circle p-2 text-center" style="width: 40px;">
+                                        <i class="fas fa-user text-muted"></i>
+                                    </div>
+                                    <span class="font-weight-bold text-dark">@item.AppUser.UserName</span>
+                                </div>
+                            </td>
+                            <td class="py-3">@item.AppointmentDate.ToShortDateString()</td>
+                            <td class="py-3 text-primary font-weight-bold">@item.TimeSlot</td>
+                            <td class="py-3">
+                                <div style="max-width: 250px; word-wrap: break-word; white-space: normal; line-height: 1.4;">
+                                    @item.Subject
+                                </div>
+                            </td>
+                            <td class="py-3">
+                                @if (item.Status == AdoptionStatus.Pending)
+                                {
+                                    <span class="badge badge-pill badge-warning px-3 py-2 text-dark"><i class="fas fa-clock mr-1"></i> Gözləyir</span>
+                                }
+                                else if (item.Status == AdoptionStatus.Approved)
+                                {
+                                    <span class="badge badge-pill badge-success px-3 py-2"><i class="fas fa-check mr-1"></i> Təsdiq</span>
+                                }
+                                else if (item.Status == AdoptionStatus.Rejected)
+                                {
+                                    <span class="badge badge-pill badge-danger px-3 py-2"><i class="fas fa-times mr-1"></i> Rədd</span>
+                                }
+                            </td>
+                            <td class="py-3 text-right">
+                                @if (item.Status == AdoptionStatus.Pending)
+                                {
+                                    <div class="btn-group shadow-sm" role="group">
+                                        <form asp-action="ChangeStatus" method="post" class="d-inline">
+                                            <input type="hidden" name="id" value="@item.Id" />
+                                            <input type="hidden" name="status" value="@AdoptionStatus.Approved" />
+                                            <button type="submit" class="btn btn-sm btn-success border-0 px-3">
+                                                <i class="fas fa-check"></i> Təsdiqlə
+                                            </button>
+                                        </form>
+                                        <form asp-action="ChangeStatus" method="post" class="d-inline ml-1">
+                                            <input type="hidden" name="id" value="@item.Id" />
+                                            <input type="hidden" name="status" value="@AdoptionStatus.Rejected" />
+                                            <button type="submit" class="btn btn-sm btn-outline-danger border-0 px-3">
+                                                <i class="fas fa-times"></i> Rədd et
+                                            </button>
+                                        </form>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <span class="text-muted small">Arxivləndi</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
