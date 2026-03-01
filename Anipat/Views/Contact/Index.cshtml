@@ -1,0 +1,84 @@
+﻿@model Anipat.Models.ContactMessage
+
+<section class="contact-section py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-4 font-weight-bold text-primary">Bizimlə Əlaqə</h2>
+            <p class="lead text-muted">Hər hansı bir sualınız var? Bizə yazın, komandamız dərhal sizə cavab versin.</p>
+        </div>
+
+        <div class="row shadow-lg bg-white no-gutters" style="border-radius: 20px; overflow: hidden;">
+            <div class="col-lg-5 bg-primary p-5 text-white d-flex flex-column justify-content-between">
+                <div>
+                    <h4>Əlaqə Məlumatları</h4>
+                    <p class="opacity-75">Bizə zəng edə və ya ofisimizə baş çəkə bilərsiniz.</p>
+
+                    <ul class="list-unstyled mt-4">
+                        <li class="mb-4 d-flex align-items-center">
+                            <i class="fas fa-map-marker-alt fa-2x mr-3"></i>
+                            <span>Bakı şəhəri, Heyvansevərlər küçəsi 42</span>
+                        </li>
+                        <li class="mb-4 d-flex align-items-center">
+                            <i class="fas fa-phone-alt fa-2x mr-3"></i>
+                            <span>+994 55 123 45 67</span>
+                        </li>
+                        <li class="mb-4 d-flex align-items-center">
+                            <i class="fas fa-envelope fa-2x mr-3"></i>
+                            <span>info@anipat.az</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="social-links mt-5">
+                    <a href="#" class="text-white mr-3"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="#" class="text-white mr-3"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-whatsapp fa-2x"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-7 p-5">
+                @if (TempData["Success"] != null)
+                {
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <i class="fas fa-check-circle mr-2"></i> @TempData["Success"]
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    </div>
+                }
+
+                <form asp-action="SendMessage" method="post" id="contactForm">
+                    <div class="form-group mb-4">
+                        <label class="font-weight-bold">Ad və Soyadınız</label>
+                        <input asp-for="Name" class="form-control form-control-lg border-0 bg-light" placeholder="Məs: Əli Məmmədov" />
+                        <span asp-validation-for="Name" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label class="font-weight-bold">Email Ünvanınız</label>
+                        <input asp-for="Email" class="form-control form-control-lg border-0 bg-light" placeholder="example@mail.com" />
+                        <span asp-validation-for="Email" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label class="font-weight-bold">Mesajınız</label>
+                        <textarea asp-for="Message" rows="5" class="form-control border-0 bg-light" placeholder="Bizə nə demək istərdiniz?"></textarea>
+                        <span asp-validation-for="Message" class="text-danger small"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-block shadow-sm py-3" style="border-radius: 10px;">
+                        Mesajı Göndər <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="mt-5 shadow-sm overflow-hidden" style="border-radius: 20px; height: 350px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194473.51865955622!2d49.71487309489578!3d40.39447059954497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d40a035a6bd%3A0xa8c2cbee0c427b3!2sBaku!5e0!3m2!1sen!2saz!4v1700000000000"
+                    width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

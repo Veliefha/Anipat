@@ -17,5 +17,6 @@ namespace Anipat.DAL
         public DbSet<Pet> Pets { get; set; }
         public DbSet<AdoptionRequest> AdoptionRequests { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
+        public DbSet<ContactMessage> ContactMessages { get; set; }
     }
 }

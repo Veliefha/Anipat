@@ -1,0 +1,77 @@
+﻿@using Anipat.Models
+@model IEnumerable<ContactMessage>
+
+@{
+    ViewData["Title"] = "Mesajlarım";
+}
+
+<div class="bradcam_area breadcam_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3>Mesaj Tarixçəm</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            @if (!Model.Any())
+            {
+                <div class="alert alert-info text-center p-5 rounded-lg">
+                    <i class="fa fa-comment-slash fa-3x mb-3"></i>
+                    <p>Hələ ki, heç bir mesaj göndərməmisiniz.</p>
+                    <a asp-action="Index" class="genric-btn primary radius">Bizə yazın</a>
+                </div>
+            }
+            else
+            {
+                @foreach (var msg in Model)
+                {
+                    <div class="card mb-4 border-0 shadow-sm" style="border-radius: 20px; overflow: hidden;">
+                        <div class="card-header bg-white border-0 pt-4 px-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge badge-pill @(string.IsNullOrEmpty(msg.AdminReply) ? "badge-warning" : "badge-success") px-3 py-2">
+                                    @(string.IsNullOrEmpty(msg.AdminReply) ? "Gözləmədə" : "Cavablandırılıb")
+                                </span>
+                                <small class="text-muted"><i class="fa fa-clock-o"></i> @msg.CreatedDate.ToString("dd.MM.yyyy HH:mm")</small>
+                            </div>
+                        </div>
+                        <div class="card-body px-4 pb-4">
+                            <div class="user-message p-3 bg-light rounded-lg mb-3">
+                                <strong class="d-block mb-1 text-dark">Sizin mesajınız:</strong>
+                                <p class="mb-0 text-secondary">@msg.Message</p>
+                            </div>
+
+                            @if (!string.IsNullOrEmpty(msg.AdminReply))
+                            {
+                                <div class="admin-reply p-3 rounded-lg" style="background-color: #fff4e6; border-left: 5px solid #ff9f43;">
+                                    <strong class="d-block mb-1 text-primary"><i class="fa fa-reply"></i> Adminin Cavabı:</strong>
+                                    <p class="mb-0 text-dark font-italic">@msg.AdminReply</p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    .shadow-sm {
+        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+    }
+
+    .rounded-lg {
+        border-radius: 15px !important;
+    }
+
+    .bg-light {
+        background-color: #f8f9fa !important;
+    }
+</style>

@@ -1,0 +1,144 @@
+﻿@using System.Text.Encodings.Web
+@model IEnumerable<Anipat.Models.ContactMessage>
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Mesaj İzləmə";
+}
+
+<style>
+    /* Modalın və kölgənin qatlarını məcburi düzəldirik */
+    .modal-backdrop {
+        z-index: 1040 !important;
+    }
+
+    #replyModal {
+        z-index: 1050 !important;
+        background: rgba(0,0,0,0.5); /* Ehtiyat üçün kölgəni özümüz veririk */
+    }
+
+    .modal-content {
+        border-radius: 15px;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    }
+</style>
+
+<div class="container-fluid mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>📩 Gələn Mesajlar</h2>
+        <span class="badge badge-primary px-3 py-2">Cəmi: @Model.Count() mesaj</span>
+    </div>
+
+    <div class="card shadow border-0" style="border-radius: 15px;">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="bg-light">
+                        <tr>
+                            <th>Göndərən</th>
+                            <th>Mesaj</th>
+                            <th>Tarix</th>
+                            <th>Status</th>
+                            <th class="text-center">Əməliyyatlar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr class="@(item.IsRead ? "opacity-75" : "font-weight-bold table-light")">
+                                <td>
+                                    <span class="d-block text-dark">@item.Name</span>
+                                    <small class="text-muted">@item.Email</small>
+                                </td>
+                                <td style="max-width: 250px;">
+                                    <p class="mb-0 text-truncate">@item.Message</p>
+                                </td>
+                                <td>@item.CreatedDate.ToString("dd.MM.yyyy HH:mm")</td>
+                                <td>
+                                    @if (item.IsRead)
+                                    {
+                                        <span class="badge badge-success">Oxunub</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-danger">Yeni</span>
+                                    }
+                                </td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-info mr-2"
+                                                onclick="openReplyModal(@item.Id, '@Html.Raw(JavaScriptEncoder.Default.Encode(item.Message))', '@Html.Raw(JavaScriptEncoder.Default.Encode(item.AdminReply ?? ""))')">
+                                            <i class="fas fa-eye"></i> Oxu
+                                        </button>
+
+                                        <form asp-action="Delete" asp-route-id="@item.Id" method="post" onsubmit="return confirm('Silinsin?')">
+                                            @Html.AntiForgeryToken()
+                                            <button type="submit" class="btn btn-sm btn-outline-danger">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="replyModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">✉️ Mesajı Cavabla</h5>
+                <button type="button" class="close text-white" onclick="closeModal()">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <form asp-action="Reply" method="post">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="id" id="messageId" />
+                <div class="modal-body p-4">
+                    <div class="form-group">
+                        <label class="font-weight-bold">İstifadəçinin Mesajı:</label>
+                        <div id="userMessageContent" class="p-3 bg-light border rounded" style="min-height: 80px; white-space: pre-wrap; color:#333;"></div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label class="font-weight-bold text-primary">Sizin Cavabınız:</label>
+                        <textarea name="replyText" id="adminReplyText" class="form-control" style="height: 150px; border: 2px solid #ddd;" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Bağla</button>
+                    <button type="submit" class="btn btn-primary px-4">Göndər</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function openReplyModal(id, message, reply) {
+            // Modalı təmiz açmaq üçün
+            document.getElementById('messageId').value = id;
+            document.getElementById('userMessageContent').textContent = message;
+            document.getElementById('adminReplyText').value = reply;
+
+            // Bootstrap modalı işə salırıq
+            $('#replyModal').modal('show');
+        }
+
+        function closeModal() {
+            $('#replyModal').modal('hide');
+        }
+
+        // Əgər modal bağlandıqdan sonra fon hələ də qara qalarsa (Bootstrap bug-ı)
+        $('#replyModal').on('hidden.bs.modal', function () {
+            $('.modal-backdrop').remove();
+            $('body').removeClass('modal-open');
+        });
+    </script>
+}

@@ -3,6 +3,54 @@
   "WorkspaceRootPath": "C:\\Users\\fexriyye\\Desktop\\Anipat\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\areas\\admin\\views\\contact\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\areas\\admin\\views\\contact\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\views\\contact\\mymessages.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\views\\contact\\mymessages.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\areas\\admin\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\areas\\admin\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\views\\contact\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\views\\contact\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\models\\contactmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\models\\contactmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\areas\\admin\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\areas\\admin\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Migrations\\20260301153642_AddContactMessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Anipat\\Migrations\\20260301153642_AddContactMessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\dal\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\dal\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\areas\\admin\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\areas\\admin\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -13,10 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\viewmodels\\admindashboardvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\viewmodels\\admindashboardvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\views\\appointment\\myappointments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -35,10 +79,6 @@
       "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\areas\\admin\\views\\appointment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\areas\\admin\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\areas\\admin\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -49,10 +89,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\views\\appointment\\book.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\views\\appointment\\book.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\dal\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\dal\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -137,10 +173,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\viewmodels\\account\\registervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\viewmodels\\account\\registervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|solutionrelative:anipat\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F183CB8-5222-4B0A-A8D4-27FD96EC8539}|Anipat\\Anipat.csproj|c:\\users\\fexriyye\\desktop\\anipat\\anipat\\models\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -254,24 +286,141 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AdminDashboardVM.cs",
-              "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\ViewModels\\AdminDashboardVM.cs",
-              "RelativeDocumentMoniker": "Anipat\\ViewModels\\AdminDashboardVM.cs",
-              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\ViewModels\\AdminDashboardVM.cs*",
-              "RelativeToolTip": "Anipat\\ViewModels\\AdminDashboardVM.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAvAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "ContactMessage.cs",
+              "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Models\\ContactMessage.cs",
+              "RelativeDocumentMoniker": "Anipat\\Models\\ContactMessage.cs",
+              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Models\\ContactMessage.cs",
+              "RelativeToolTip": "Anipat\\Models\\ContactMessage.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAkwBgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T18:28:11.083Z",
+              "WhenOpened": "2026-03-01T15:33:26.091Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 4,
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeToolTip": "Anipat\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAqwJQAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-23T16:49:59.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ContactController.cs",
+              "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Controllers\\ContactController.cs",
+              "RelativeDocumentMoniker": "Anipat\\Controllers\\ContactController.cs",
+              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Controllers\\ContactController.cs",
+              "RelativeToolTip": "Anipat\\Controllers\\ContactController.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAqwFEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T15:53:42.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Views\\Contact\\Index.cshtml",
+              "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Views\\Contact\\Index.cshtml",
+              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Views\\Contact\\Index.cshtml*",
+              "RelativeToolTip": "Anipat\\Areas\\Admin\\Views\\Contact\\Index.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAI8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-01T15:44:02.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "20260301153642_AddContactMessage.cs",
+              "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Migrations\\20260301153642_AddContactMessage.cs",
+              "RelativeDocumentMoniker": "Anipat\\Migrations\\20260301153642_AddContactMessage.cs",
+              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Migrations\\20260301153642_AddContactMessage.cs",
+              "RelativeToolTip": "Anipat\\Migrations\\20260301153642_AddContactMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T15:36:42.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MyMessages.cshtml",
+              "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Contact\\MyMessages.cshtml",
+              "RelativeDocumentMoniker": "Anipat\\Views\\Contact\\MyMessages.cshtml",
+              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Contact\\MyMessages.cshtml",
+              "RelativeToolTip": "Anipat\\Views\\Contact\\MyMessages.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-01T16:20:14.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Anipat\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Anipat\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACwBAAAAAAAAAAAkwD0BAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-18T15:50:50.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ContactController.cs",
+              "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Controllers\\ContactController.cs",
+              "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Controllers\\ContactController.cs",
+              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Controllers\\ContactController.cs",
+              "RelativeToolTip": "Anipat\\Areas\\Admin\\Controllers\\ContactController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T15:39:14.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "Anipat\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "Anipat\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-01T16:02:30.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Contact\\Index.cshtml",
+              "RelativeDocumentMoniker": "Anipat\\Views\\Contact\\Index.cshtml",
+              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Contact\\Index.cshtml",
+              "RelativeToolTip": "Anipat\\Views\\Contact\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-01T15:52:31.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
               "Title": "20260227190730_AddedAppointmentTable.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Migrations\\20260227190730_AddedAppointmentTable.cs",
               "RelativeDocumentMoniker": "Anipat\\Migrations\\20260227190730_AddedAppointmentTable.cs",
@@ -283,7 +432,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 18,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Views\\Appointment\\Index.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Views\\Appointment\\Index.cshtml",
@@ -295,7 +444,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 16,
               "Title": "AppointmentController.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Controllers\\AppointmentController.cs",
               "RelativeDocumentMoniker": "Anipat\\Controllers\\AppointmentController.cs",
@@ -307,58 +456,70 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Anipat\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Anipat\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAEwB4AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-18T15:50:50.076Z",
+              "DocumentIndex": 9,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Models\\AppUser.cs",
+              "RelativeDocumentMoniker": "Anipat\\Models\\AppUser.cs",
+              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Models\\AppUser.cs",
+              "RelativeToolTip": "Anipat\\Models\\AppUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T18:46:26.413Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 14,
+              "Title": "AdminDashboardVM.cs",
+              "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\ViewModels\\AdminDashboardVM.cs",
+              "RelativeDocumentMoniker": "Anipat\\ViewModels\\AdminDashboardVM.cs",
+              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\ViewModels\\AdminDashboardVM.cs",
+              "RelativeToolTip": "Anipat\\ViewModels\\AdminDashboardVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T18:28:11.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\DAL\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Anipat\\DAL\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\DAL\\AppDbContext.cs",
+              "RelativeToolTip": "Anipat\\DAL\\AppDbContext.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAtwBMAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T15:20:55.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Controllers\\DashboardController.cs",
-              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Controllers\\DashboardController.cs*",
-              "RelativeToolTip": "Anipat\\Areas\\Admin\\Controllers\\DashboardController.cs*",
+              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "Anipat\\Areas\\Admin\\Controllers\\DashboardController.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAqwDAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T16:47:46.962Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-23T16:47:46.962Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 12,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
-              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml*",
-              "RelativeToolTip": "Anipat\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml*",
-              "ViewState": "AgIAALMAAAAAAAAAAAAqwMwAAAAGAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "Anipat\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAALUAAAAAAAAAAAAQwMwAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-02-23T16:54:20.383Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "_AdminLayout.cshtml",
-              "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
-              "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
-              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
-              "RelativeToolTip": "Anipat\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAUwGsAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-23T16:49:59.278Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 19,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Views\\Home\\Index.cshtml",
@@ -370,7 +531,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 15,
               "Title": "MyAppointments.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Appointment\\MyAppointments.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Views\\Appointment\\MyAppointments.cshtml",
@@ -382,7 +543,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 17,
               "Title": "AppointmentController.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Controllers\\AppointmentController.cs",
               "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Controllers\\AppointmentController.cs",
@@ -394,7 +555,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 20,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Views\\Adoption\\Index.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Views\\Adoption\\Index.cshtml",
@@ -406,7 +567,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 33,
               "Title": "PetController.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Controllers\\PetController.cs",
               "RelativeDocumentMoniker": "Anipat\\Controllers\\PetController.cs",
@@ -418,7 +579,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 22,
               "Title": "Appointment.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Models\\Appointment.cs",
               "RelativeDocumentMoniker": "Anipat\\Models\\Appointment.cs",
@@ -430,7 +591,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 21,
               "Title": "Book.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Appointment\\Book.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Views\\Appointment\\Book.cshtml",
@@ -442,7 +603,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 25,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Pet\\Details.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Views\\Pet\\Details.cshtml",
@@ -454,7 +615,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 29,
               "Title": "Update.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Pet\\Update.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Views\\Pet\\Update.cshtml",
@@ -466,7 +627,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 23,
               "Title": "AdoptionController.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Controllers\\AdoptionController.cs",
               "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Controllers\\AdoptionController.cs",
@@ -478,7 +639,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 24,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Anipat\\Controllers\\HomeController.cs",
@@ -490,19 +651,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\DAL\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Anipat\\DAL\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\DAL\\AppDbContext.cs",
-              "RelativeToolTip": "Anipat\\DAL\\AppDbContext.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAtwBIAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-20T15:20:55.043Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 27,
               "Title": "AdoptionController.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Controllers\\AdoptionController.cs",
               "RelativeDocumentMoniker": "Anipat\\Controllers\\AdoptionController.cs",
@@ -514,7 +663,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 26,
               "Title": "MyRequests.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Adoption\\MyRequests.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Views\\Adoption\\MyRequests.cshtml",
@@ -526,7 +675,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 30,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Pet\\Index.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Views\\Pet\\Index.cshtml",
@@ -538,7 +687,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 28,
               "Title": "Statistic.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Models\\Statistic.cs",
               "RelativeDocumentMoniker": "Anipat\\Models\\Statistic.cs",
@@ -550,7 +699,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 31,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\Pet\\Create.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Views\\Pet\\Create.cshtml",
@@ -562,7 +711,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 34,
               "Title": "PetController.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Controllers\\PetController.cs",
               "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Controllers\\PetController.cs",
@@ -574,7 +723,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 32,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Program.cs",
               "RelativeDocumentMoniker": "Anipat\\Program.cs",
@@ -586,7 +735,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 37,
               "Title": "AdoptionStatus.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Models\\Enums\\AdoptionStatus.cs",
               "RelativeDocumentMoniker": "Anipat\\Models\\Enums\\AdoptionStatus.cs",
@@ -598,7 +747,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 36,
               "Title": "AdoptionRequest.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Models\\AdoptionRequest.cs",
               "RelativeDocumentMoniker": "Anipat\\Models\\AdoptionRequest.cs",
@@ -610,7 +759,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 66,
               "Title": "20260225180824_IdentityAdded.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Migrations\\20260225180824_IdentityAdded.cs",
               "RelativeDocumentMoniker": "Anipat\\Migrations\\20260225180824_IdentityAdded.cs",
@@ -622,7 +771,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 35,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Controllers\\AccountController.cs",
@@ -634,7 +783,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 67,
               "Title": "20260225172704_AddAdoptionTable.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Migrations\\20260225172704_AddAdoptionTable.cs",
               "RelativeDocumentMoniker": "Anipat\\Migrations\\20260225172704_AddAdoptionTable.cs",
@@ -646,7 +795,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 38,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Views\\Account\\Login.cshtml",
@@ -658,7 +807,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 39,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Views\\Account\\Register.cshtml",
@@ -670,7 +819,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 40,
               "Title": "LoginVM.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\ViewModels\\Account\\LoginVM.cs",
               "RelativeDocumentMoniker": "Anipat\\ViewModels\\Account\\LoginVM.cs",
@@ -682,7 +831,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 41,
               "Title": "ServiceController.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Controllers\\ServiceController.cs",
               "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Controllers\\ServiceController.cs",
@@ -694,7 +843,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 42,
               "Title": "RegisterVM.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\ViewModels\\Account\\RegisterVM.cs",
               "RelativeDocumentMoniker": "Anipat\\ViewModels\\Account\\RegisterVM.cs",
@@ -706,19 +855,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "AppUser.cs",
-              "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Models\\AppUser.cs",
-              "RelativeDocumentMoniker": "Anipat\\Models\\AppUser.cs",
-              "ToolTip": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Models\\AppUser.cs",
-              "RelativeToolTip": "Anipat\\Models\\AppUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T18:46:26.413Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 65,
               "Title": "20260224184858_AddedIdentity.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Migrations\\20260224184858_AddedIdentity.cs",
               "RelativeDocumentMoniker": "Anipat\\Migrations\\20260224184858_AddedIdentity.cs",
@@ -730,7 +867,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 47,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Views\\Team\\Index.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Views\\Team\\Index.cshtml",
@@ -742,7 +879,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 48,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Views\\Team\\Create.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Views\\Team\\Create.cshtml",
@@ -754,7 +891,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 46,
               "Title": "TeamController.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Controllers\\TeamController.cs",
               "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Controllers\\TeamController.cs",
@@ -766,7 +903,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 50,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Views\\_ViewImports.cshtml",
@@ -778,7 +915,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 43,
               "Title": "Pet.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Models\\Pet.cs",
               "RelativeDocumentMoniker": "Anipat\\Models\\Pet.cs",
@@ -790,7 +927,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 45,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Views\\Service\\Create.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Views\\Service\\Create.cshtml",
@@ -802,7 +939,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 44,
               "Title": "Update.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Views\\Team\\Update.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Views\\Team\\Update.cshtml",
@@ -814,7 +951,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 49,
               "Title": "Team.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Models\\Team.cs",
               "RelativeDocumentMoniker": "Anipat\\Models\\Team.cs",
@@ -826,7 +963,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 52,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Views\\Service\\Index.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Views\\Service\\Index.cshtml",
@@ -838,7 +975,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 51,
               "Title": "Update.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Areas\\Admin\\Views\\Service\\Update.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Areas\\Admin\\Views\\Service\\Update.cshtml",
@@ -850,7 +987,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 53,
               "Title": "HomeVM.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\ViewModels\\HomeVM.cs",
               "RelativeDocumentMoniker": "Anipat\\ViewModels\\HomeVM.cs",
@@ -862,7 +999,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 57,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\appsettings.json",
               "RelativeDocumentMoniker": "Anipat\\appsettings.json",
@@ -874,7 +1011,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 64,
               "Title": "20260223152407_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Migrations\\20260223152407_InitialCreate.cs",
               "RelativeDocumentMoniker": "Anipat\\Migrations\\20260223152407_InitialCreate.cs",
@@ -886,7 +1023,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 56,
               "Title": "20260220160033_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Migrations\\20260220160033_InitialCreate.cs",
               "RelativeDocumentMoniker": "Anipat\\Migrations\\20260220160033_InitialCreate.cs",
@@ -898,7 +1035,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 54,
               "Title": "20260220160715_CreateFullDatabase.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Migrations\\20260220160715_CreateFullDatabase.cs",
               "RelativeDocumentMoniker": "Anipat\\Migrations\\20260220160715_CreateFullDatabase.cs",
@@ -910,7 +1047,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 55,
               "Title": "Service.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Models\\Service.cs",
               "RelativeDocumentMoniker": "Anipat\\Models\\Service.cs",
@@ -922,7 +1059,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 58,
               "Title": "MatchingService.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Services\\MatchingService.cs",
               "RelativeDocumentMoniker": "Anipat\\Services\\MatchingService.cs",
@@ -934,7 +1071,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 59,
               "Title": "Testimonial.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Models\\Testimonial.cs",
               "RelativeDocumentMoniker": "Anipat\\Models\\Testimonial.cs",
@@ -946,7 +1083,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 62,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Views\\_ViewStart.cshtml",
@@ -958,7 +1095,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 60,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Models\\Base\\BaseEntity.cs",
               "RelativeDocumentMoniker": "Anipat\\Models\\Base\\BaseEntity.cs",
@@ -970,7 +1107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 61,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Anipat\\Views\\_ViewImports.cshtml",
@@ -982,7 +1119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 63,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\fexriyye\\Desktop\\Anipat\\Anipat\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Anipat\\Properties\\launchSettings.json",
