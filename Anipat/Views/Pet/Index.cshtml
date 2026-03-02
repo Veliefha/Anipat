@@ -1,44 +1,172 @@
 ﻿@using Anipat.Models
 @model List<Pet>
 @{
-    Layout = "_AdminLayout";
+    bool isAdmin = Context.Request.Path.Value.Contains("/Admin");
+    Layout = isAdmin ? "/Areas/Admin/Views/Shared/_AdminLayout.cshtml" : "_Layout";
+    ViewData["Title"] = "Bizim Dostlarımız";
 }
 
-<div class="d-flex justify-content-between align-items-center mb-4">
-    <h2>🐾 Heyvan Sığınacağı İdarəetməsi</h2>
-    <a asp-action="Create" class="btn btn-success btn-cici">Yeni Dost Əlavə Et</a>
-</div>
+<style>
+    .pet-card {
+        border: none;
+        border-radius: 20px;
+        transition: all 0.3s ease-in-out;
+        overflow: hidden;
+        background: #fff;
+    }
 
-<div class="card shadow-sm border-0">
-    <table class="table table-hover align-middle">
-        <thead class="table-light">
-            <tr>
-                <th>Şəkil</th>
-                <th>Ad / Cins</th>
-                <th>Məkan</th>
-                <th>Enerji</th>
-                <th>Status</th>
-                <th class="text-center">Əməliyyat</th>
-            </tr>
-        </thead>
-        <tbody>
+        .pet-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+        }
+
+    .pet-img-container {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .pet-img {
+        height: 220px;
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
+
+    .pet-card:hover .pet-img {
+        transform: scale(1.1);
+    }
+
+    .distance-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: rgba(255, 255, 255, 0.9);
+        color: #ff3500;
+        padding: 5px 12px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .btn-gradient {
+        background: linear-gradient(45deg, #ff3500, #ff6200);
+        color: white;
+        border: none;
+    }
+
+        .btn-gradient:hover {
+            color: white;
+            opacity: 0.9;
+        }
+</style>
+
+<div class="container mt-5" id="pet-list-container">
+    <div class="row align-items-center mb-5">
+        <div class="col-md-7">
+            <h2 class="display-5 font-weight-bold" style="color: #2c3e50;">
+                @(isAdmin ? "🐾 Sistem İdarəetməsi" : "🐾 Yeni Dostunu Tap")
+            </h2>
+            <p class="text-muted lead">Hazırda <b>@Model.Count</b> sevimli dostumuz yuva gözləyir.</p>
+        </div>
+        <div class="col-md-5 text-md-right">
+            <button onclick="getMyLocation()" class="btn btn-gradient rounded-pill px-4 shadow-sm mb-2">
+                <i class="fas fa-location-arrow mr-2"></i> Ən Yaxın Olanları Tap
+            </button>
+            @if (isAdmin)
+            {
+                <a asp-action="Create" class="btn btn-dark rounded-pill px-4 shadow-sm mb-2 ml-2"><i class="fas fa-plus"></i> Əlavə Et</a>
+            }
+        </div>
+    </div>
+
+    @if (isAdmin)
+    {
+        <div class="card shadow-sm border-0" style="border-radius: 20px;">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead style="background: #f8f9fa;">
+                        <tr>
+                            <th class="border-0 py-3 px-4">Profil</th>
+                            <th class="border-0">Ad və Cins</th>
+                            <th class="border-0">Şəhər</th>
+                            <th class="border-0">Status</th>
+                            <th class="border-0 text-right px-4">İdarəetmə</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var p in Model)
+                        {
+                            <tr>
+                                <td class="px-4"><img src="~/img/pets/@p.ImageUrl" width="55" height="55" class="rounded-circle shadow-sm" style="object-fit:cover; border: 2px solid #eee;" /></td>
+                                <td><div class="font-weight-bold" style="font-size: 1.1rem;">@p.Name</div><span class="text-muted small">@p.Breed</span></td>
+                                <td><i class="fas fa-map-marker-alt text-muted mr-1"></i> @p.City</td>
+                                <td>
+                                    <span class="badge badge-pill badge-light @(p.IsAdopted ? "text-success" : "text-warning") px-3 py-2" style="font-size: 11px;">
+                                        <i class="fas @(p.IsAdopted ? "fa-check-circle" : "fa-clock")"></i> @(p.IsAdopted ? "SAHİBLƏNİB" : "GÖZLƏYİR")
+                                    </span>
+                                </td>
+                                <td class="text-right px-4">
+                                    <a asp-action="Update" asp-route-id="@p.Id" class="btn btn-link text-warning p-2"><i class="fas fa-edit fa-lg"></i></a>
+                                    <a asp-action="Delete" asp-route-id="@p.Id" class="btn btn-link text-danger p-2" onclick="return confirm('Silmək istədiyinizdən əminsiniz?')"><i class="fas fa-trash-alt fa-lg"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="row">
             @foreach (var p in Model)
             {
-                <tr>
-                    <td><img src="~/img/pets/@p.ImageUrl" width="60" height="60" class="rounded-circle shadow-sm" style="object-fit:cover" /></td>
-                    <td>
-                        <strong>@p.Name</strong> <br />
-                        <small class="text-muted">@p.Breed (@p.Age yaş)</small>
-                    </td>
-                    <td>@p.City</td>
-                    <td><span class="badge bg-info">@p.Energy</span></td>
-                    <td>@(p.IsAdopted ? "🏠 Övladlığa götürülüb" : "🦴 Sığınacaqdadır")</td>
-                    <td class="text-center">
-                        <a asp-action="Update" asp-route-id="@p.Id" class="btn btn-sm btn-warning text-white">Redaktə</a>
-                        <a asp-action="Delete" asp-route-id="@p.Id" class="btn btn-sm btn-danger" onclick="return confirm('Silinsin?')">Sil</a>
-                    </td>
-                </tr>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-5">
+                    <div class="card h-100 shadow-sm pet-card">
+                        <div class="pet-img-container">
+                            <img src="~/img/pets/@p.ImageUrl" class="pet-img" alt="@p.Name">
+                            @if (p.Distance > 0)
+                            {
+                                <div class="distance-badge"><i class="fas fa-bolt"></i> @p.Distance.ToString("F1") km</div>
+                            }
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="font-weight-bold mb-1" style="color: #2c3e50;">@p.Name</h5>
+                            <div class="text-muted small mb-3"><i class="fas fa-paw mr-1"></i> @p.Breed</div>
+                            <div class="d-flex justify-content-center align-items-center text-secondary small mb-3"><i class="fas fa-map-marker-alt text-danger mr-1"></i> @p.City</div>
+                            <a asp-action="Details" asp-route-id="@p.Id" class="btn btn-outline-dark rounded-pill btn-block btn-sm font-weight-bold">Ətraflı Bax</a>
+                        </div>
+                    </div>
+                </div>
             }
-        </tbody>
-    </table>
+        </div>
+    }
 </div>
+
+@section Scripts {
+    <script>
+        function getMyLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    let lat = position.coords.latitude;
+                    let lng = position.coords.longitude;
+                    localStorage.setItem('petFilterActive', 'true');
+                    let currentPath = window.location.pathname;
+                    let baseUrl = currentPath.toLowerCase().includes("/admin") ? "/Admin/Pet/FilterByDistance" : "/Pet/FilterByDistance";
+
+                    // returnUrl elave edildi
+                    window.location.href = `${baseUrl}?userLat=${lat}&userLong=${lng}&radius=50&returnUrl=${encodeURIComponent(currentPath)}#pet-list-container`;
+                }, function() { alert("Məkan məlumatı alınmadı."); });
+            } else { alert("Brauzer geolokasiyanı dəstəkləmir."); }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            if (localStorage.getItem('petFilterActive') === 'true' || window.location.hash === "#pet-list-container") {
+                const element = document.getElementById('pet-list-container');
+                if (element) { element.scrollIntoView({ behavior: 'auto' }); }
+                localStorage.removeItem('petFilterActive');
+            }
+        });
+    </script>
+}

@@ -20,6 +20,10 @@ namespace Anipat.Models
         public string Description { get; set; }
         public bool IsAdopted { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+        [NotMapped] // Bazada cədvələ əlavə olunmasın deyə
+        public double Distance { get; set; }
     }
 
     public enum EnergyLevel { Low, Medium, High }

@@ -112,6 +112,9 @@ wwwroot\img\logo.png
 wwwroot\img\offers\1.png
 wwwroot\img\offers\2.png
 wwwroot\img\offers\3.png
+wwwroot\img\pets\4c2a77ad-7a9d-4486-8e1f-64fb9ccd2d04_c312f2d25b063c21688556675f85d6f2.jpg
+wwwroot\img\pets\a09ba579-b96b-400f-ab27-df9e4a0a250c_download (18).jpeg
+wwwroot\img\pets\b6363784-0cbd-472f-809e-e2feee308dbf_the thousandth floor aesthetic rich aesthetic money.jpeg
 wwwroot\img\pets\e19b983e-9be3-4f61-b6ad-23a7ff586c9d_En Tatlı Walpaper.jpg
 wwwroot\img\post\next.png
 wwwroot\img\post\post_1.png

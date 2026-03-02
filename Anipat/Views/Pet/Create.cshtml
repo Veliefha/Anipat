@@ -6,7 +6,7 @@
 
 <h2 class="header-title mb-4">🐾 Yeni Heyvan Dostu Əlavə Et</h2>
 
-<div class="card card-cici shadow-sm border-0 p-4">
+<div class="card card-cici shadow-sm border-0 p-4" style="border-radius: 20px;">
     <form asp-action="Create" method="post" enctype="multipart/form-data">
 
         <div class="row">
@@ -38,12 +38,21 @@
             </div>
         </div>
 
-        <div class="mb-3">
+        <div class="mb-4">
             <label class="font-weight-bold">Haqqında Qısa Məlumat</label>
             <textarea asp-for="Description" class="form-control" rows="3" style="border-radius: 12px;" placeholder="Xarakteri, vərdişləri..."></textarea>
         </div>
 
-        <div class="row mb-3">
+        <div class="form-group mb-4">
+            <label class="font-weight-bold text-primary"><i class="fas fa-map-marker-alt"></i> Xəritədən Məkanı Seçin</label>
+            <div id="map" style="height: 350px; border-radius: 15px; border: 2px solid #e9ecef;"></div>
+            <small class="text-muted">Heyvanın olduğu yeri xəritədə klikləyərək işarələyin.</small>
+
+            <input type="hidden" asp-for="Latitude" id="LatInput" />
+            <input type="hidden" asp-for="Longitude" id="LngInput" />
+        </div>
+
+        <div class="row mb-4">
             <div class="col-md-6">
                 <div class="custom-control custom-checkbox">
                     <input asp-for="IsKidsFriendly" class="custom-control-input" id="kidsCheck">
@@ -53,7 +62,7 @@
             <div class="col-md-6">
                 <div class="custom-control custom-checkbox">
                     <input asp-for="IsAdopted" class="custom-control-input" id="adoptCheck">
-                    <label class="custom-control-label text-success" for="adoptCheck font-weight-bold">Artıq sahiblənilib?</label>
+                    <label class="custom-control-label text-success font-weight-bold" for="adoptCheck">Artıq sahiblənilib?</label>
                 </div>
             </div>
         </div>
@@ -67,12 +76,53 @@
         <hr />
 
         <div class="d-flex justify-content-start mt-4">
-            <button type="submit" class="btn btn-success btn-cici mr-2 shadow-sm">
+            <button type="submit" class="btn btn-success btn-cici mr-2 shadow-sm px-4 py-2">
                 <i class="fas fa-save mr-1"></i> Sistemi Yadda Saxla
             </button>
-            <a asp-action="Index" class="btn btn-light btn-cici text-muted border">
+            <a asp-action="Index" class="btn btn-light btn-cici text-muted border px-4 py-2">
                 <i class="fas fa-arrow-left mr-1"></i> Geri Qayıt
             </a>
         </div>
     </form>
 </div>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        // Xəritəni Bakı koordinatları ilə başladırıq
+        var map = L.map('map').setView([40.4093, 49.8671], 11);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        var marker;
+
+        // Xəritəyə kliklədikdə marker qoyur və inputları doldurur
+        map.on('click', function (e) {
+            var lat = e.latlng.lat;
+            var lng = e.latlng.lng;
+
+            if (marker) {
+                map.removeLayer(marker);
+            }
+
+            marker = L.marker([lat, lng]).addTo(map);
+
+            document.getElementById('LatInput').value = lat;
+            document.getElementById('LngInput').value = lng;
+        });
+
+        // Avtomatik olaraq istifadəçinin yerini tapmağa çalışır
+        map.locate({ setView: true, maxZoom: 15 });
+
+        map.on('locationfound', function(e) {
+            if (marker) map.removeLayer(marker);
+            marker = L.marker(e.latlng).addTo(map);
+            document.getElementById('LatInput').value = e.latlng.lat;
+            document.getElementById('LngInput').value = e.latlng.lng;
+        });
+    </script>
+}
