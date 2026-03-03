@@ -1,5 +1,6 @@
 ﻿using Anipat.DAL;
 using Anipat.Models;
+using Anipat.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -29,7 +30,13 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = "/Admin/Account/Login";
 });
 
+
+// Service-i bura əlavə et:
+builder.Services.AddScoped<PetDescriptionService>();
+
 var app = builder.Build();
+
+
 
 // --- ADMIN YARATMA VƏ ROL TƏYİNİ (YENİ HİSSƏ) ---
 using (var scope = app.Services.CreateScope())

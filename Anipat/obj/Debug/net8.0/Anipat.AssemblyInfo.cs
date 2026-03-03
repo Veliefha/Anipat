@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Anipat")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c9fe446304c2d64a91ed84da2e6314d0b06a4c7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7207e76efaa97db719e184f80063412d2e4d1cdf")]
 [assembly: System.Reflection.AssemblyProductAttribute("Anipat")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Anipat")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

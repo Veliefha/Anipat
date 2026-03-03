@@ -1,4 +1,6 @@
 ﻿@using Anipat.Models
+@using Anipat.Services
+@inject PetDescriptionService DescriptionService
 @model Pet
 
 @{
@@ -54,14 +56,21 @@
 
                     <h5 class="fw-bold mt-4">Haqqında:</h5>
                     <p class="lead text-muted mb-5">
-                        @(string.IsNullOrEmpty(Model.Description) ? "Bu dostumuz haqqında hələlik ətraflı məlumat qeyd edilməyib." : Model.Description)
+                        @* Əgər əllə yazılmış Description yoxdursa, Service-dən gələn dinamik mətni göstər *@
+                        @if (string.IsNullOrEmpty(Model.Description))
+                        {
+                            @DescriptionService.GenerateDescription(Model.Species, Model.Age, Model.Energy, Model.IsKidsFriendly)
+                        }
+                        else
+                        {
+                            @Model.Description
+                        }
                     </p>
 
                     <div class="d-grid gap-2">
                         @if (User.Identity.IsAuthenticated)
                         {
                             <form asp-controller="Adoption" asp-action="SendRequest" method="post">
-                                @* petId mütləq burda olmalıdır *@
                                 <input type="hidden" name="petId" value="@Model.Id" />
                                 <button type="submit" class="btn btn-warning btn-lg w-100 py-3 fw-bold shadow-sm text-dark" style="border-radius: 50px; transition: 0.3s;">
                                     Məni Sahiblən 🏠
@@ -92,9 +101,11 @@
 
 @section Scripts {
     <script>
-        // Mesajların 5 saniyə sonra avtomatik itməsi üçün (istəyə bağlı)
         setTimeout(function() {
-            $('.alert').alert('close');
+            $('.alert').each(function() {
+                var alert = new bootstrap.Alert(this);
+                alert.close();
+            });
         }, 5000);
     </script>
 }

@@ -12,11 +12,18 @@
         <input type="hidden" asp-for="ImageUrl" />
 
         <div class="row">
-            <div class="col-md-6 mb-3">
+            <div class="col-md-4 mb-3">
                 <label class="font-weight-bold">Ad</label>
                 <input asp-for="Name" class="form-control" style="border-radius: 10px;" />
             </div>
-            <div class="col-md-6 mb-3">
+            @* YENİ: Növ seçimi buraya əlavə olundu *@
+            <div class="col-md-4 mb-3">
+                <label class="font-weight-bold">Heyvanın Növü</label>
+                <select asp-for="Species" class="form-control" style="border-radius: 10px;"
+                        asp-items="Html.GetEnumSelectList<PetSpecies>()">
+                </select>
+            </div>
+            <div class="col-md-4 mb-3">
                 <label class="font-weight-bold">Cins</label>
                 <input asp-for="Breed" class="form-control" style="border-radius: 10px;" />
             </div>
@@ -33,20 +40,20 @@
             </div>
             <div class="col-md-4 mb-3">
                 <label class="font-weight-bold">Enerji Səviyyəsi</label>
-                <select asp-for="Energy" class="form-control" style="border-radius: 10px;" asp-items="Html.GetEnumSelectList<EnergyLevel>()"></select>
+                <select asp-for="Energy" class="form-control" style="border-radius: 10px;"
+                        asp-items="Html.GetEnumSelectList<EnergyLevel>()"></select>
             </div>
         </div>
 
         <div class="mb-3">
             <label class="font-weight-bold">Təsvir</label>
             <textarea asp-for="Description" class="form-control" rows="3" style="border-radius: 10px;"></textarea>
+            <small class="text-muted">Əgər boş qoysanız, sistem avtomatik təsvir yaradacaq.</small>
         </div>
 
         <div class="form-group mb-4">
             <label class="font-weight-bold text-primary"><i class="fas fa-map-marker-alt"></i> Məkanı Redaktə Et</label>
             <div id="map" style="height: 350px; border-radius: 15px; border: 2px solid #e9ecef;"></div>
-            <small class="text-muted">Məkanı dəyişmək üçün xəritədə yeni yerə klikləyin.</small>
-
             <input type="hidden" asp-for="Latitude" id="LatInput" />
             <input type="hidden" asp-for="Longitude" id="LngInput" />
         </div>
@@ -76,8 +83,8 @@
         </div>
 
         <div class="mt-4">
-            <button type="submit" class="btn btn-primary btn-lg shadow">Dəyişiklikləri Yadda Saxla</button>
-            <a asp-action="Index" class="btn btn-light btn-lg border">Geri</a>
+            <button type="submit" class="btn btn-primary btn-lg shadow" style="border-radius: 12px;">Dəyişiklikləri Yadda Saxla</button>
+            <a asp-action="Index" class="btn btn-light btn-lg border" style="border-radius: 12px;">Geri</a>
         </div>
     </form>
 </div>
@@ -87,29 +94,20 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <script>
-        // Bazadakı koordinatları götürürük
         var oldLat = @(Model.Latitude != 0 ? Model.Latitude : 40.4093);
         var oldLng = @(Model.Longitude != 0 ? Model.Longitude : 49.8671);
 
-        // Xəritəni köhnə koordinatlara fokuslayırıq
         var map = L.map('map').setView([oldLat, oldLng], 14);
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap'
-        }).addTo(map);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-        // Köhnə koordinatda markeri göstəririk
         var marker = L.marker([oldLat, oldLng]).addTo(map);
 
-        // Xəritəyə yeni klik edildikdə yeri dəyişirik
         map.on('click', function (e) {
             var lat = e.latlng.lat;
             var lng = e.latlng.lng;
 
-            if (marker) {
-                map.removeLayer(marker);
-            }
-
+            if (marker) map.removeLayer(marker);
             marker = L.marker([lat, lng]).addTo(map);
 
             document.getElementById('LatInput').value = lat;

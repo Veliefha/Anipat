@@ -23,11 +23,10 @@ namespace Anipat.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             var pets = await _context.Pets.OrderByDescending(p => p.CreatedAt).ToListAsync();
-            // Faylın yerini tam ünvanla göstəririk
             return View("/Views/Pet/Index.cshtml", pets);
         }
 
-        // --- RADİUSA GÖRƏ FİLTER (TEST ÜÇÜN) ---
+        // --- RADİUSA GÖRƏ FİLTER ---
         public async Task<IActionResult> FilterByDistance(double userLat, double userLong, double radius = 15)
         {
             var allPets = await _context.Pets.ToListAsync();
@@ -47,7 +46,6 @@ namespace Anipat.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            // Xəta almamaq üçün ana Views qovluğuna yönləndiririk
             return View("/Views/Pet/Create.cshtml");
         }
 
@@ -55,10 +53,15 @@ namespace Anipat.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Pet pet)
         {
+            // Şəkil yükləmə məntiqi
             if (pet.ImageFile != null)
             {
                 string fileName = Guid.NewGuid().ToString() + "_" + pet.ImageFile.FileName;
                 string path = Path.Combine(_env.WebRootPath, "img/pets", fileName);
+
+                if (!Directory.Exists(Path.GetDirectoryName(path)))
+                    Directory.CreateDirectory(Path.GetDirectoryName(path));
+
                 using (var stream = new FileStream(path, FileMode.Create))
                 {
                     await pet.ImageFile.CopyToAsync(stream);
@@ -77,8 +80,6 @@ namespace Anipat.Areas.Admin.Controllers
         {
             var pet = await _context.Pets.FindAsync(id);
             if (pet == null) return NotFound();
-
-            // Xəta almamaq üçün ana Views qovluğuna yönləndiririk
             return View("/Views/Pet/Update.cshtml", pet);
         }
 
@@ -91,6 +92,7 @@ namespace Anipat.Areas.Admin.Controllers
 
             if (pet.ImageFile != null)
             {
+                // Köhnə şəkli silmək
                 if (!string.IsNullOrEmpty(dbPet.ImageUrl))
                 {
                     string oldPath = Path.Combine(_env.WebRootPath, "img/pets", dbPet.ImageUrl);
@@ -106,7 +108,9 @@ namespace Anipat.Areas.Admin.Controllers
                 dbPet.ImageUrl = fileName;
             }
 
+            // Məlumatları yeniləyirik
             dbPet.Name = pet.Name;
+            dbPet.Species = pet.Species; // <--- BU VACİBDİR (Növü yadda saxlayırıq)
             dbPet.Breed = pet.Breed;
             dbPet.Age = pet.Age;
             dbPet.Energy = pet.Energy;
@@ -138,10 +142,9 @@ namespace Anipat.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // --- KÖMƏKÇİ HESABLAMA METODLARI ---
         private double CalculateDistance(double lat1, double lon1, double lat2, double lon2)
         {
-            var R = 6371; // km
+            var R = 6371;
             var dLat = ToRadians(lat2 - lat1);
             var dLon = ToRadians(lon2 - lon1);
             var a = Math.Sin(dLat / 2) * Math.Sin(dLat / 2) +

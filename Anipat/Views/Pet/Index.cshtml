@@ -1,4 +1,6 @@
 ﻿@using Anipat.Models
+@using Anipat.Services
+@inject PetDescriptionService DescriptionService
 @model List<Pet>
 @{
     bool isAdmin = Context.Request.Path.Value.Contains("/Admin");
@@ -59,6 +61,16 @@
             color: white;
             opacity: 0.9;
         }
+
+    /* Təsvir mətni üçün limit - 2 sətirdən çox olmasın */
+    .line-clamp {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: 0.85rem;
+        height: 40px;
+    }
 </style>
 
 <div class="container mt-5" id="pet-list-container">
@@ -130,16 +142,24 @@
                             {
                                 <div class="distance-badge"><i class="fas fa-bolt"></i> @p.Distance.ToString("F1") km</div>
                             }
-                        </div>
-                        <div class="card-body text-center">
-                            <h5 class="font-weight-bold mb-1" style="color: #2c3e50;">@p.Name</h5>
-                            <div class="text-muted small mb-3"><i class="fas fa-paw mr-1"></i> @p.Breed</div>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="font-weight-bold mb-1" style="color: #2c3e50;">@p.Name</h5>
+                        <div class="text-muted small mb-2"><i class="fas fa-paw mr-1"></i> @p.Breed</div>
+
+                        @* Dinamik Təsvir Buraya Əlavə Edildi *@
+                        <p class="text-muted line-clamp mb-3">
+                            @(string.IsNullOrEmpty(p.Description)
+                                                    ? DescriptionService.GenerateDescription(p.Species, p.Age, p.Energy, p.IsKidsFriendly)
+                                                    : p.Description)
+                    </p>
+
                             <div class="d-flex justify-content-center align-items-center text-secondary small mb-3"><i class="fas fa-map-marker-alt text-danger mr-1"></i> @p.City</div>
                             <a asp-action="Details" asp-route-id="@p.Id" class="btn btn-outline-dark rounded-pill btn-block btn-sm font-weight-bold">Ətraflı Bax</a>
                         </div>
                     </div>
                 </div>
-            }
+                }
         </div>
     }
 </div>
@@ -155,7 +175,6 @@
                     let currentPath = window.location.pathname;
                     let baseUrl = currentPath.toLowerCase().includes("/admin") ? "/Admin/Pet/FilterByDistance" : "/Pet/FilterByDistance";
 
-                    // returnUrl elave edildi
                     window.location.href = `${baseUrl}?userLat=${lat}&userLong=${lng}&radius=50&returnUrl=${encodeURIComponent(currentPath)}#pet-list-container`;
                 }, function() { alert("Məkan məlumatı alınmadı."); });
             } else { alert("Brauzer geolokasiyanı dəstəkləmir."); }
