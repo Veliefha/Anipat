@@ -198,3 +198,4 @@ wwwroot\scss\_team.scss
 wwwroot\scss\_testmonial.scss
 wwwroot\scss\_varriable.scss
 wwwroot\img\pets\5db6c142-959c-46a9-b572-3ddf1a71a970_c12df43eb017d57535978e42bc1deaf8.jpg
+wwwroot\img\pets\b7522ae3-3cc6-4dd3-ab1b-5ecdffbf2fc7_c12df43eb017d57535978e42bc1deaf8.jpg
