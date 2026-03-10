@@ -16,7 +16,6 @@
                 <label class="font-weight-bold">Ad</label>
                 <input asp-for="Name" class="form-control" style="border-radius: 10px;" />
             </div>
-            @* YENİ: Növ seçimi buraya əlavə olundu *@
             <div class="col-md-4 mb-3">
                 <label class="font-weight-bold">Heyvanın Növü</label>
                 <select asp-for="Species" class="form-control" style="border-radius: 10px;"
@@ -37,6 +36,7 @@
             <div class="col-md-4 mb-3">
                 <label class="font-weight-bold">Şəhər</label>
                 <input asp-for="City" class="form-control" style="border-radius: 10px;" />
+                <small class="text-muted">Məsələn: Bakı, Gəncə və s.</small>
             </div>
             <div class="col-md-4 mb-3">
                 <label class="font-weight-bold">Enerji Səviyyəsi</label>
@@ -49,13 +49,6 @@
             <label class="font-weight-bold">Təsvir</label>
             <textarea asp-for="Description" class="form-control" rows="3" style="border-radius: 10px;"></textarea>
             <small class="text-muted">Əgər boş qoysanız, sistem avtomatik təsvir yaradacaq.</small>
-        </div>
-
-        <div class="form-group mb-4">
-            <label class="font-weight-bold text-primary"><i class="fas fa-map-marker-alt"></i> Məkanı Redaktə Et</label>
-            <div id="map" style="height: 350px; border-radius: 15px; border: 2px solid #e9ecef;"></div>
-            <input type="hidden" asp-for="Latitude" id="LatInput" />
-            <input type="hidden" asp-for="Longitude" id="LngInput" />
         </div>
 
         <div class="row mb-3">
@@ -88,30 +81,3 @@
         </div>
     </form>
 </div>
-
-@section Scripts {
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-    <script>
-        var oldLat = @(Model.Latitude != 0 ? Model.Latitude : 40.4093);
-        var oldLng = @(Model.Longitude != 0 ? Model.Longitude : 49.8671);
-
-        var map = L.map('map').setView([oldLat, oldLng], 14);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-
-        var marker = L.marker([oldLat, oldLng]).addTo(map);
-
-        map.on('click', function (e) {
-            var lat = e.latlng.lat;
-            var lng = e.latlng.lng;
-
-            if (marker) map.removeLayer(marker);
-            marker = L.marker([lat, lng]).addTo(map);
-
-            document.getElementById('LatInput').value = lat;
-            document.getElementById('LngInput').value = lng;
-        });
-    </script>
-}

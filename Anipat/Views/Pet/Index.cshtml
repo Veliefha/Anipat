@@ -38,19 +38,6 @@
         transform: scale(1.1);
     }
 
-    .distance-badge {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        background: rgba(255, 255, 255, 0.9);
-        color: #ff3500;
-        padding: 5px 12px;
-        border-radius: 50px;
-        font-weight: 600;
-        font-size: 12px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
     .btn-gradient {
         background: linear-gradient(45deg, #ff3500, #ff6200);
         color: white;
@@ -62,7 +49,6 @@
             opacity: 0.9;
         }
 
-    /* Təsvir mətni üçün limit - 2 sətirdən çox olmasın */
     .line-clamp {
         display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -82,9 +68,7 @@
             <p class="text-muted lead">Hazırda <b>@Model.Count</b> sevimli dostumuz yuva gözləyir.</p>
         </div>
         <div class="col-md-5 text-md-right">
-            <button onclick="getMyLocation()" class="btn btn-gradient rounded-pill px-4 shadow-sm mb-2">
-                <i class="fas fa-location-arrow mr-2"></i> Ən Yaxın Olanları Tap
-            </button>
+            @* Məkan düyməsini sildik, çünki artıq koordinat sistemini ləğv etdik *@
             @if (isAdmin)
             {
                 <a asp-action="Create" class="btn btn-dark rounded-pill px-4 shadow-sm mb-2 ml-2"><i class="fas fa-plus"></i> Əlavə Et</a>
@@ -138,20 +122,16 @@
                     <div class="card h-100 shadow-sm pet-card">
                         <div class="pet-img-container">
                             <img src="~/img/pets/@p.ImageUrl" class="pet-img" alt="@p.Name">
-                            @if (p.Distance > 0)
-                            {
-                                <div class="distance-badge"><i class="fas fa-bolt"></i> @p.Distance.ToString("F1") km</div>
-                            }
-                    </div>
-                    <div class="card-body text-center">
-                        <h5 class="font-weight-bold mb-1" style="color: #2c3e50;">@p.Name</h5>
-                        <div class="text-muted small mb-2"><i class="fas fa-paw mr-1"></i> @p.Breed</div>
+                            @* Distance Badge-i sildik, artıq km göstərmirik *@
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="font-weight-bold mb-1" style="color: #2c3e50;">@p.Name</h5>
+                            <div class="text-muted small mb-2"><i class="fas fa-paw mr-1"></i> @p.Breed</div>
 
-                        @* Dinamik Təsvir Buraya Əlavə Edildi *@
-                        <p class="text-muted line-clamp mb-3">
-                            @(string.IsNullOrEmpty(p.Description)
-                                                    ? DescriptionService.GenerateDescription(p.Species, p.Age, p.Energy, p.IsKidsFriendly)
-                                                    : p.Description)
+                            <p class="text-muted line-clamp mb-3">
+                                @(string.IsNullOrEmpty(p.Description)
+                                                        ? DescriptionService.GenerateDescription(p.Species, p.Age, p.Energy, p.IsKidsFriendly)
+                                                        : p.Description)
                     </p>
 
                             <div class="d-flex justify-content-center align-items-center text-secondary small mb-3"><i class="fas fa-map-marker-alt text-danger mr-1"></i> @p.City</div>
@@ -163,30 +143,3 @@
         </div>
     }
 </div>
-@* adding pets *@
-
-@section Scripts {
-    <script>
-        function getMyLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                    let lat = position.coords.latitude;
-                    let lng = position.coords.longitude;
-                    localStorage.setItem('petFilterActive', 'true');
-                    let currentPath = window.location.pathname;
-                    let baseUrl = currentPath.toLowerCase().includes("/admin") ? "/Admin/Pet/FilterByDistance" : "/Pet/FilterByDistance";
-
-                    window.location.href = `${baseUrl}?userLat=${lat}&userLong=${lng}&radius=50&returnUrl=${encodeURIComponent(currentPath)}#pet-list-container`;
-                }, function() { alert("Məkan məlumatı alınmadı."); });
-            } else { alert("Brauzer geolokasiyanı dəstəkləmir."); }
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            if (localStorage.getItem('petFilterActive') === 'true' || window.location.hash === "#pet-list-container") {
-                const element = document.getElementById('pet-list-container');
-                if (element) { element.scrollIntoView({ behavior: 'auto' }); }
-                localStorage.removeItem('petFilterActive');
-            }
-        });
-    </script>
-}

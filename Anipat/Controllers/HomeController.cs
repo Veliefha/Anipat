@@ -20,8 +20,32 @@ namespace Anipat.Controllers
                 Services = _context.Services.ToList(),
                 Statistics = _context.Statistics.ToList(),
                 Testimonials = _context.Testimonials.ToList(),
-                TeamMembers = _context.Teams.ToList(), 
+                TeamMembers = _context.Teams.ToList(),
                 LatestPets = _context.Pets.Take(3).ToList()
+            };
+            return View(model);
+        }
+
+        public IActionResult About()
+        {
+            var model = new HomeVM();
+            return View(model);
+        }
+
+        public IActionResult Services()
+        {
+            var model = new HomeVM
+            {
+                Services = _context.Services.ToList()
+            };
+            return View(model);
+        }
+
+        public IActionResult Team()
+        {
+            var model = new HomeVM
+            {
+                TeamMembers = _context.Teams.ToList()
             };
             return View(model);
         }

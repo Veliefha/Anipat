@@ -56,7 +56,6 @@
 
                     <h5 class="fw-bold mt-4">Haqqında:</h5>
                     <p class="lead text-muted mb-5">
-                        @* Əgər əllə yazılmış Description yoxdursa, Service-dən gələn dinamik mətni göstər *@
                         @if (string.IsNullOrEmpty(Model.Description))
                         {
                             @DescriptionService.GenerateDescription(Model.Species, Model.Age, Model.Energy, Model.IsKidsFriendly)

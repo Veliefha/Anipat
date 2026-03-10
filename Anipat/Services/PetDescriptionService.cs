@@ -9,18 +9,18 @@ namespace Anipat.Services
         {
             string speciesName = species switch
             {
-                PetSpecies.Dog => "it",
-                PetSpecies.Cat => "pişik",
-                PetSpecies.Rabbit => "dovşan",
-                PetSpecies.Bird => "quş",
+                PetSpecies.İt => "it",
+                PetSpecies.Pişik => "pişik",
+                PetSpecies.Dovşan => "dovşan",
+                PetSpecies.Quş => "quş",
                 _ => "sevimli dost"
             };
 
             string energyText = energy switch
             {
-                EnergyLevel.High => "çox enerjili",
-                EnergyLevel.Medium => "orta aktivlikdə",
-                EnergyLevel.Low => "sakit təbiətli",
+                EnergyLevel.Yüksək => "çox enerjili",
+                EnergyLevel.Orta => "orta aktivlikdə",
+                EnergyLevel.Aşağı => "sakit təbiətli",
                 _ => "mehriban"
             };
 

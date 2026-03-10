@@ -5,7 +5,6 @@
 @inject AppDbContext _context
 
 @{
-    // Giriş etmiş istifadəçi üçün bildirişləri hazırlayırıq
     var userEmail = User.Identity.IsAuthenticated ? User.Identity.Name : null;
     var notifications = !string.IsNullOrEmpty(userEmail)
         ? _context.ContactMessages.Where(m => m.Email == userEmail && !string.IsNullOrEmpty(m.AdminReply)).OrderByDescending(m => m.Id).Take(5).ToList()
@@ -37,7 +36,6 @@
     <link rel="stylesheet" href="~/css/style.css">
 
     <style>
-        /* Sənin mövcud CSS-lərin */
         .main-header-area {
             padding: 10px 0 !important;
         }
@@ -77,7 +75,6 @@
             transition: 0.3s;
         }
 
-        /* YENİ: Bildiriş Zəngi üçün stillər */
         .notif-badge {
             position: absolute;
             top: -5px;
@@ -151,9 +148,9 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a asp-controller="Home" asp-action="Index">Ana Səhifə</a></li>
-                                        <li><a href="#">Haqqımızda</a></li>
-                                        <li><a href="#">Xidmətlər</a></li>
-                                        <li><a href="#">Komanda</a></li>
+                                        <li><a asp-controller="Home" asp-action="About">Haqqımızda</a></li>
+                                        <li><a asp-controller="Home" asp-action="Services">Xidmətlər</a></li>
+                                        
                                         <li><a asp-controller="Contact" asp-action="Index">Əlaqə</a></li>
 
                                         @if (User.Identity.IsAuthenticated)
@@ -206,7 +203,7 @@
                                                         <li><a asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Admin Panel</a></li>
                                                     }
                                                     <li><a asp-controller="Contact" asp-action="MyMessages">Mesajlarım</a></li>
-                                                    <li><a asp-area="Admin" asp-controller="Account" asp-action="Logout" class="logout-link">Çıxış</a></li>
+                                                    <li><a asp-area="Admin" asp-controller="Account" asp-action="Logout">Çıxış</a></li>
                                                 </ul>
                                             </li>
                                         }
@@ -247,9 +244,9 @@
                         <div class="footer_widget">
                             <h3 class="footer_title">Xidmətlərimiz</h3>
                             <ul class="links">
-                                <li><a href="#">Sahiblənmə</a></li>
-                                <li><a href="#">Müayinə</a></li>
-                                <li><a href="#">Məsləhət</a></li>
+                                <li><a asp-controller="Home" asp-action="Services">Sahiblənmə</a></li>
+                                <li><a asp-controller="Home" asp-action="Services">Müayinə</a></li>
+                                <li><a asp-controller="Home" asp-action="Services">Məsləhət</a></li>
                             </ul>
                         </div>
                     </div>
@@ -257,7 +254,7 @@
                         <div class="footer_widget">
                             <h3 class="footer_title">Sürətli Keçid</h3>
                             <ul class="links">
-                                <li><a href="#">Haqqımızda</a></li>
+                                <li><a asp-controller="Home" asp-action="About">Haqqımızda</a></li>
                                 <li><a href="#">Məxfilik Siyasəti</a></li>
                             </ul>
                         </div>
@@ -265,7 +262,7 @@
                     <div class="col-xl-3 col-md-6 col-lg-3">
                         <div class="footer_widget">
                             <div class="footer_logo">
-                                <a href="#"><img src="~/img/logo.png" alt="Anipat"></a>
+                                <a asp-controller="Home" asp-action="Index"><img src="~/img/logo.png" alt="Anipat"></a>
                             </div>
                             <p class="address_text">Bakı şəhəri, Nizami küçəsi 25</p>
                             <div class="socail_links">

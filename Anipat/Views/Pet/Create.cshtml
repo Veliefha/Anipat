@@ -14,7 +14,6 @@
                 <label class="font-weight-bold">Adı</label>
                 <input asp-for="Name" class="form-control" style="border-radius: 12px;" placeholder="Məs: Dostik" required />
             </div>
-            @* YENİ: Heyvanın Növü Seçimi *@
             <div class="col-md-4 mb-3">
                 <label class="font-weight-bold">Heyvanın Növü</label>
                 <select asp-for="Species" class="form-control" style="border-radius: 12px;"
@@ -52,12 +51,7 @@
             <small class="text-muted">Boş qoysanız, sistem avtomatik təsvir yaradacaq.</small>
         </div>
 
-        <div class="form-group mb-4">
-            <label class="font-weight-bold text-primary"><i class="fas fa-map-marker-alt"></i> Xəritədən Məkanı Seçin</label>
-            <div id="map" style="height: 350px; border-radius: 15px; border: 2px solid #e9ecef;"></div>
-            <input type="hidden" asp-for="Latitude" id="LatInput" />
-            <input type="hidden" asp-for="Longitude" id="LngInput" />
-        </div>
+        @* Xəritə bloku tamamilə sildi *@
 
         <div class="row mb-4">
             <div class="col-md-6">
@@ -92,30 +86,4 @@
     </form>
 </div>
 
-@section Scripts {
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-    <script>
-        var map = L.map('map').setView([40.4093, 49.8671], 11);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-        var marker;
-
-        map.on('click', function (e) {
-            var lat = e.latlng.lat;
-            var lng = e.latlng.lng;
-            if (marker) map.removeLayer(marker);
-            marker = L.marker([lat, lng]).addTo(map);
-            document.getElementById('LatInput').value = lat;
-            document.getElementById('LngInput').value = lng;
-        });
-
-        map.locate({ setView: true, maxZoom: 15 });
-        map.on('locationfound', function(e) {
-            if (marker) map.removeLayer(marker);
-            marker = L.marker(e.latlng).addTo(map);
-            document.getElementById('LatInput').value = e.latlng.lat;
-            document.getElementById('LngInput').value = e.latlng.lng;
-        });
-    </script>
-}
+@* Scripts section-ı (Leaflet və s.) təmizləndi *@

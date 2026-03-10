@@ -1,0 +1,89 @@
+﻿@model Anipat.ViewModels.HomeVM
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="bradcam_area breadcam_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bradcam_text text-center">
+                    <h3>Xidmətlərimiz</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="service_area">
+    <div class="container">
+        <div class="row justify-content-center ">
+            <div class="col-lg-7 col-md-10">
+                <div class="section_title text-center mb-95">
+                    <h3>Hər bir ev heyvanı üçün xidmətlər</h3>
+                    <p>Ev heyvanlarınızın sağlamlığı, qidalanması və gündəlik baxımı üçün geniş və peşəkar xidmətlər təqdim edirik.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            @foreach (var service in Model.Services)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service @(service.IsActive ? "active" : "")">
+                        <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
+                            <div class="service_icon">
+                                <img src="~/img/service/@service.IconPath" alt="@service.Title">
+                            </div>
+                        </div>
+                        <div class="service_content text-center">
+                            <h3>@service.Title</h3>
+                            <p>@service.Description</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="testmonial_area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="textmonial_active owl-carousel">
+                    <div class="testmonial_wrap">
+                        <div class="single_testmonial d-flex align-items-center">
+                            <div class="test_thumb">
+                                <img src="~/img/testmonial/1.png" alt="Müştəri">
+                            </div>
+                            <div class="test_content">
+                                <h4>Cavid Əliyev</h4>
+                                <span>İt Sahibi</span>
+                                <p>Anipat komandasına təşəkkür edirəm. Xidmət səviyyəsi və heyvanlara yanaşma tərzi mükəmməldir.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="contact_anipat anipat_bg_1">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="contact_text text-center">
+                    <div class="section_title text-center">
+                        <h3>Niyə məhz Anipat?</h3>
+                        <p>Çünki biz təkcə xidmət göstərmirik, həm də onlara ailəmizin bir üzvü kimi yanaşırıq.</p>
+                    </div>
+                    <div class="contact_btn d-flex align-items-center justify-content-center">
+                        <a asp-controller="Home" asp-action="Contact" class="boxed-btn4">Bizimlə Əlaqə</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
